@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: var(--sh-paper);
+  color: var(--sh-ink);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  color: #D7A55A;
+}
+
+.card-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.decorative-leaf {
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.wave-footer {
+  background: #00332B;
+  clip-path: ellipse(80% 100% at 50% 100%);
+}
+
+.bg-pattern-3 {
+  background-color: #fdfdfd;
+  background-image: url('https://www.transparenttextures.com/patterns/clean-gray-paper.png');
+  position: relative;
+  overflow: hidden;
+}
+
+.palm-leaf-top-right {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  opacity: 0.05;
+  background-image: url('https://www.transparenttextures.com/patterns/leaves.png');
+  pointer-events: none;
+}
+
+.palm-leaf-bottom-left {
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  opacity: 0.05;
+  background-image: url('https://www.transparenttextures.com/patterns/leaves.png');
+  pointer-events: none;
+  transform: rotate(180deg);
+}
+
+.gold-bullets li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.gold-bullets li::before {
+  content: "\2022";
+  color: #b5935a;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 12px rgba(26, 58, 58, 0.05);
+  transform: translateY(-2px);
+}
+
+.card-pale-yellow {
+  background-color: #FFFCEB;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.card-pale-yellow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.08);
+}
+
+.beach-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Shared utilities for the Boutique Editorial redesign slides. */
+:root {
+  --sh-paper: #f8f1e4;
+  --sh-paper-soft: #fffaf0;
+  --sh-sand: #eadcc3;
+  --sh-sage: #c9d8cb;
+  --sh-teal: #153b39;
+  --sh-teal-soft: #2f6661;
+  --sh-champagne: #c8913c;
+  --sh-ink: #173331;
+  --sh-muted: #66736f;
+  --sh-border: rgba(32, 64, 60, 0.14);
+  --sh-card-shadow: 0 22px 60px rgba(30, 53, 49, 0.10);
+}
+
+.editorial-page {
+  color: var(--sh-ink);
+}
+
+.editorial-card {
+  border: 1px solid var(--sh-border);
+  border-radius: 28px;
+  background: rgba(255, 250, 240, 0.88);
+  box-shadow: var(--sh-card-shadow);
+}
+
+.editorial-card-soft {
+  border: 1px solid rgba(200, 145, 60, 0.18);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.editorial-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: #153b39;
+  color: #f0c985;
+  box-shadow: 0 12px 28px rgba(21, 59, 57, 0.16);
+}
+
+.editorial-kicker {
+  color: var(--sh-teal-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.editorial-title {
+  color: var(--sh-teal);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -0.035em;
+}
+
+.editorial-muted {
+  color: var(--sh-muted);
+}
+
+@keyframes hero-zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.hero-zoom {
+  animation: hero-zoom 30s infinite alternate ease-in-out;
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
