@@ -3,7 +3,7 @@ import EditorialHero from './ui/EditorialHero';
 import Icon from './ui/Icon';
 import SectionTitle from './ui/SectionTitle';
 
-const HERO_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBWAwATavi8-whkj3BO-LL8Lxs8pyAD9YLvsmNLWU0pB5dM8gMZyWh-6R2YHAGiXh7RpJSm6IWeq7XWG1iGiWD0DF77_5t5Oevr7T8D7f1tZlF9cbGp75EXS9PmXI6CeH7CwmK_xFjKLp8WgiihRDhQSr8MgPFCApWxsPgD1lGw-uQSwAEJE2aHaJdBLG9Yvb9Frh95jjE_cfzlsLZy6R2-r7WJSxsZXP6ENlDGpwmnMFXCAXH1MRhbA';
+const HERO_IMAGE = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1785294396/1784015817228_885263377326364022_g7328569027530867083_1d3fe220d1eb437c93bdd91f2e76487e_cjdvyw.jpg';
 
 const SERVICE_IMAGES = {
   motorbike: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADenTxKtTwTgvGq4poeQXgB_SOt7kkNZoYL0o0Y1FD70LoN1RKSdZ0OYzluQv1KpeFIpKepuva6qZa2lom2Nhha5YkFoAacm13z991hrb8sZUUdVpkLNBEMfcMSL2OG82_TDHPKcBUfCyXh3NpteMp6S0f52LWKj-gAW9W1b7jG5YvtW_jF5fSc5kSaEAHC7QQzFSnmjJveJYGXP3Rk3gJcdTjJT3jEBZ4jHHr9KbXJGZ0kKXLRVgAUQ',
