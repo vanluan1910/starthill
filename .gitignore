@@ -2,3 +2,4 @@ node_modules
 dist
 ChatGPT Image*.png
 .superpowers/
+.worktrees/
