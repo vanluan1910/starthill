@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState, useRef, useCallback, useEffect } from 'react';
+import { lazy, Suspense, useState, useCallback, useEffect } from 'react';
 import Header from './components/Header';
 import SlideBackground from './components/SlideBackground';
 import WelcomePage from './components/WelcomePage';
@@ -55,8 +55,6 @@ function getInitialSlide() {
 function App() {
   const [slide, setSlide] = useState(getInitialSlide);
   const [lang, setLang] = useState('en');
-  const touchStartX = useRef(0);
-  const touchStartY = useRef(0);
 
   useEffect(() => {
     try {
@@ -99,24 +97,8 @@ function App() {
     return () => window.removeEventListener('popstate', handlePop);
   }, []);
 
-  const handleTouchStart = useCallback((e) => {
-    touchStartX.current = e.touches[0].clientX;
-    touchStartY.current = e.touches[0].clientY;
-  }, []);
-
-  const handleTouchEnd = useCallback(
-    (e) => {
-      const dx = touchStartX.current - e.changedTouches[0].clientX;
-      const dy = touchStartY.current - e.changedTouches[0].clientY;
-      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
-        goTo(slide + (dx > 0 ? 1 : -1));
-      }
-    },
-    [slide, goTo]
-  );
-
   return (
-    <div className="bg-background antialiased" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+    <div className="bg-background antialiased">
       <Header currentSlide={slide} onNavigate={goTo} lang={lang} onLangChange={setLang} />
 
       <div className="h-screen overflow-hidden" style={{ height: '100dvh' }}>
