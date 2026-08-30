@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { t } from '../i18n';
+import SafeImage from './ui/SafeImage';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -37,8 +38,8 @@ const TRAVEL_TIMES = [
 ];
 
 const GARDEN_IMG = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1782898529/6A8A1289_cklcl8.png';
-const COAST_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4PLXlaMhBY8Ah1kiG1oCFh1Tv8Ur6Kz_-_dLl4aQo5D0AQfT4jih1Np7S8zGxIdc75lA9Xt-bBPSG6P1LbtuJci3g7fmoOsJv2TNpflHzyr5SZr8gJ0KnkyvmjmP1PogTdYGKeKNo803a7IG0hYLudD09MgxgTlCfGK5ZElBN0vvczPQlJo_AaQh-3DhMAnR38gDXxdkRnojk9eKIyYepkHStLZs3qKI-0t8GSJk0BEP0_yl557yf';
-const SUNSET_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuDnWj9WUNtbYfhH4ybRcYFvGf-wtBsK4IGVTbbLyunqIeFOieiKXolhu9Gs_4erYtYz_VaV79sVNRXvucS1R7N7587ZhGbsIk-K_Q6_Lft4jaBSgpj1MOKi86x0A1j2Jbq8cf0sw7e8MYNsMhsmr3Tr2NRaktDyZmZTfkMue2fLxyN4H3ZDJdnbibshfNv9QjdUWGNmZVWP7v3yhKNXc1C7EZd2IB0-UzgO_oMKImBfmxIe46ByRLIg';
+const COAST_IMG = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80';
+const SUNSET_IMG = 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80';
 const SERVICE_IMG = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1782898522/6A8A1248_rnsems.png';
 
 function FAQItem({ item, lang }) {
@@ -108,7 +109,7 @@ function TravelTips({ lang = 'en' }) {
           <motion.div className="space-y-4" variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
             <motion.div variants={fadeUp} className="editorial-card-soft overflow-hidden">
               <div className="relative h-48 overflow-hidden">
-                <img alt={t('tips.peaceful', lang)} className="w-full h-full object-cover" src={GARDEN_IMG} />
+                <SafeImage alt={t('tips.peaceful', lang)} className="w-full h-full object-cover" src={GARDEN_IMG} />
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-2">
@@ -138,13 +139,13 @@ function TravelTips({ lang = 'en' }) {
                 ))}
               </div>
               <div className="h-32 rounded-lg overflow-hidden mt-4">
-                <img alt={t('explore.coastline', lang)} className="w-full h-full object-cover" src={COAST_IMG} />
+                <SafeImage alt={t('explore.coastline', lang)} className="w-full h-full object-cover" src={COAST_IMG} />
               </div>
             </motion.div>
 
             <motion.div variants={fadeUp} className="editorial-card-soft overflow-hidden">
               <div className="relative h-44 overflow-hidden">
-                <img alt={t('tips.bestOfPQ', lang)} className="w-full h-full object-cover" src={SUNSET_IMG} />
+                <SafeImage alt={t('tips.bestOfPQ', lang)} className="w-full h-full object-cover" src={SUNSET_IMG} />
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-2">
@@ -157,7 +158,7 @@ function TravelTips({ lang = 'en' }) {
 
             <motion.div variants={fadeUp} className="editorial-card-soft overflow-hidden">
               <div className="relative h-44 overflow-hidden">
-                <img alt={t('tips.friendlyService', lang)} className="w-full h-full object-cover" src={SERVICE_IMG} />
+                <SafeImage alt={t('tips.friendlyService', lang)} className="w-full h-full object-cover" src={SERVICE_IMG} />
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-2">
@@ -216,13 +217,35 @@ function TravelTips({ lang = 'en' }) {
                 {t('tips.bookTaxi', lang)}
               </h4>
             </div>
-            <a href="tel:0855484444" className="editorial-card-soft block p-4 flex items-center justify-between">
-              <h4 className="font-semibold text-sm text-[#003333] flex items-center gap-2">
-                <span className="material-symbols-outlined text-[#D7A55A]">support</span>
+            <div className="editorial-card-soft p-4 space-y-3">
+              <h4 className="font-semibold text-sm text-[#003333] flex items-center gap-2 border-b border-[#D7A55A]/20 pb-2">
+                <span className="material-symbols-outlined text-[#D7A55A]">support_agent</span>
                 {t('tips.needMoreHelp', lang)}
               </h4>
-              <span className="material-symbols-outlined text-gray-400">call</span>
-            </a>
+              <div className="grid grid-cols-1 gap-2 pt-1 text-xs">
+                <a href="tel:+84855484444" className="flex items-center justify-between rounded-xl bg-white/90 p-3 font-bold text-[#003333] no-underline shadow-sm transition-all hover:bg-[#D7A55A]/20">
+                  <span className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-base text-[#003333]">call</span>
+                    <span>Call Hotline</span>
+                  </span>
+                  <span>+84 855 484 444</span>
+                </a>
+                <a href="https://zalo.me/84855484444" target="_blank" rel="noreferrer" className="flex items-center justify-between rounded-xl bg-blue-50/90 p-3 font-bold text-blue-700 no-underline shadow-sm transition-all hover:bg-blue-100">
+                  <span className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-base">chat</span>
+                    <span>Zalo Chat</span>
+                  </span>
+                  <span>+84 855 484 444</span>
+                </a>
+                <a href="https://wa.me/84855484444" target="_blank" rel="noreferrer" className="flex items-center justify-between rounded-xl bg-emerald-50/90 p-3 font-bold text-emerald-700 no-underline shadow-sm transition-all hover:bg-emerald-100">
+                  <span className="flex items-center gap-2">
+                    <span className="material-symbols-outlined text-base">chat_bubble</span>
+                    <span>WhatsApp</span>
+                  </span>
+                  <span>+84 855 484 444</span>
+                </a>
+              </div>
+            </div>
           </motion.div>
 
           <motion.section variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="editorial-card p-8 text-center space-y-4 relative overflow-hidden">
@@ -279,7 +302,7 @@ function TravelTips({ lang = 'en' }) {
                 <p className="text-gray-600 text-sm">{t('tips.peacefulDesc', lang)}</p>
               </div>
               <div className="w-full md:w-1/2 overflow-hidden h-48 md:h-auto">
-                <img alt={t('tips.peaceful', lang)} className="w-full h-full object-cover" src={GARDEN_IMG} />
+                <SafeImage alt={t('tips.peaceful', lang)} className="w-full h-full object-cover" src={GARDEN_IMG} />
               </div>
             </motion.div>
 
@@ -304,13 +327,13 @@ function TravelTips({ lang = 'en' }) {
                 </div>
               </div>
               <div className="h-40 rounded-lg overflow-hidden">
-                <img alt={t('explore.coastline', lang)} className="w-full h-full object-cover" src={COAST_IMG} />
+                <SafeImage alt={t('explore.coastline', lang)} className="w-full h-full object-cover" src={COAST_IMG} />
               </div>
             </motion.div>
 
             <motion.div variants={fadeUp} className="editorial-card-soft md:col-span-4 overflow-hidden">
               <div className="h-48 overflow-hidden">
-                <img alt={t('tips.bestOfPQ', lang)} className="w-full h-full object-cover" src={SUNSET_IMG} />
+                <SafeImage alt={t('tips.bestOfPQ', lang)} className="w-full h-full object-cover" src={SUNSET_IMG} />
               </div>
               <div className="p-6 space-y-3">
                 <div className="flex items-center gap-2">
@@ -323,7 +346,7 @@ function TravelTips({ lang = 'en' }) {
 
             <motion.div variants={fadeUp} className="editorial-card-soft md:col-span-3 overflow-hidden">
               <div className="h-48 overflow-hidden">
-                <img alt={t('tips.friendlyService', lang)} className="w-full h-full object-cover" src={SERVICE_IMG} />
+                <SafeImage alt={t('tips.friendlyService', lang)} className="w-full h-full object-cover" src={SERVICE_IMG} />
               </div>
               <div className="p-6 space-y-3">
                 <div className="flex items-center gap-2">
@@ -379,13 +402,35 @@ function TravelTips({ lang = 'en' }) {
                       {t('tips.bookTaxi', lang)}
                     </h4>
                   </div>
-                  <a href="tel:0855484444" className="editorial-card-soft block p-4 flex items-center justify-between transition-all">
-                    <h4 className="font-semibold text-sm text-[#003333] flex items-center gap-2">
-                      <span className="material-symbols-outlined text-[#D7A55A]">support</span>
+                  <div className="editorial-card-soft p-4 space-y-3">
+                    <h4 className="font-semibold text-sm text-[#003333] flex items-center gap-2 border-b border-[#D7A55A]/20 pb-2">
+                      <span className="material-symbols-outlined text-[#D7A55A]">support_agent</span>
                       {t('tips.needMoreHelp', lang)}
                     </h4>
-                    <span className="material-symbols-outlined text-[#D7A55A]">call</span>
-                  </a>
+                    <div className="grid grid-cols-1 gap-2 pt-1 text-xs">
+                      <a href="tel:+84855484444" className="flex items-center justify-between rounded-xl bg-white/90 p-3 font-bold text-[#003333] no-underline shadow-sm transition-all hover:bg-[#D7A55A]/20">
+                        <span className="flex items-center gap-2">
+                          <span className="material-symbols-outlined text-base text-[#003333]">call</span>
+                          <span>Call Hotline</span>
+                        </span>
+                        <span>+84 855 484 444</span>
+                      </a>
+                      <a href="https://zalo.me/84855484444" target="_blank" rel="noreferrer" className="flex items-center justify-between rounded-xl bg-blue-50/90 p-3 font-bold text-blue-700 no-underline shadow-sm transition-all hover:bg-blue-100">
+                        <span className="flex items-center gap-2">
+                          <span className="material-symbols-outlined text-base">chat</span>
+                          <span>Zalo Chat</span>
+                        </span>
+                        <span>+84 855 484 444</span>
+                      </a>
+                      <a href="https://wa.me/84855484444" target="_blank" rel="noreferrer" className="flex items-center justify-between rounded-xl bg-emerald-50/90 p-3 font-bold text-emerald-700 no-underline shadow-sm transition-all hover:bg-emerald-100">
+                        <span className="flex items-center gap-2">
+                          <span className="material-symbols-outlined text-base">chat_bubble</span>
+                          <span>WhatsApp</span>
+                        </span>
+                        <span>+84 855 484 444</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -66,10 +66,20 @@ function WelcomePage({ lang = 'en', onNavigate }) {
           </motion.div>
 
           <motion.h1
-            className="font-serif text-[44px] font-bold leading-[0.96] tracking-[-0.045em] text-white text-shadow sm:text-[56px] md:max-w-[620px] md:text-[72px] lg:text-[86px]"
+            className="font-serif text-[32px] font-bold leading-[1.12] tracking-[-0.035em] text-white text-shadow xs:text-[38px] sm:text-[52px] md:max-w-[720px] md:text-[66px] lg:text-[80px]"
             variants={itemVariants}
           >
-            {t('welcome.heroTitle', lang)}
+            {lang === 'ko' ? (
+              <>
+                <span className="block whitespace-nowrap text-[#f0c975]">Star Hill Resort</span>
+                <span className="block text-white/90 text-[26px] sm:text-[40px] md:text-[52px] lg:text-[64px]">에 오신 것을 환영합니다</span>
+              </>
+            ) : (
+              <>
+                <span className="block text-white/90">{t('welcome.greeting', lang)}</span>
+                <span className="block whitespace-nowrap text-[#f0c975]">Star Hill Resort</span>
+              </>
+            )}
           </motion.h1>
 
           <motion.p

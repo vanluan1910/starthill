@@ -46,26 +46,23 @@ function getHashSlide() {
   }
 }
 
-function getStoredSlide() {
+function getInitialSlide() {
   const fromHash = getHashSlide();
   if (fromHash !== undefined) return fromHash;
-  try {
-    const v = parseInt(localStorage.getItem(SLIDE_KEY) || '0', 10);
-    return Math.max(0, Math.min(TOTAL_SLIDES - 1, isNaN(v) ? 0 : v));
-  } catch {
-    return 0;
-  }
+  return 0; // Always start on Home screen (slide 0) when scanning QR code
 }
 
 function App() {
-  const [slide, setSlide] = useState(getStoredSlide);
+  const [slide, setSlide] = useState(getInitialSlide);
   const [lang, setLang] = useState('en');
   const touchStartX = useRef(0);
   const touchStartY = useRef(0);
 
   useEffect(() => {
-    try { localStorage.setItem(SLIDE_KEY, String(slide)); } catch { /* ignore */ }
-  }, [slide]);
+    try {
+      localStorage.removeItem(SLIDE_KEY);
+    } catch { /* ignore */ }
+  }, []);
 
   useEffect(() => {
     const markIcons = () => {

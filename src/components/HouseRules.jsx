@@ -68,9 +68,18 @@ function HouseRules({ lang = 'en' }) {
               <h2 className="font-serif text-[26px] font-semibold text-[#153b39]">{t('rules.clarification', lang)}</h2>
               <p className="mt-2 max-w-2xl text-[16px] leading-[1.75] text-[#494640]">{t('rules.clarificationDesc', lang)}</p>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <a className="inline-flex items-center justify-center rounded-full bg-[#615e57] px-8 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_26px_rgba(97,94,87,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#49463f]" href="tel:0855484444">
-                {t('rules.contactReception', lang)}
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a className="inline-flex items-center gap-2 rounded-full bg-[#615e57] px-6 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_26px_rgba(97,94,87,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#49463f]" href="tel:+84855484444">
+                <Icon className="text-base">call</Icon>
+                Call: +84 855 484 444
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-full bg-[#0068ff] px-6 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_26px_rgba(0,104,255,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#0052cc]" href="https://zalo.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-base">chat</Icon>
+                Zalo: +84 855 484 444
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-full bg-[#25d366] px-6 py-3 text-sm font-bold text-white no-underline shadow-[0_12px_26px_rgba(37,211,102,0.2)] transition-all hover:-translate-y-0.5 hover:bg-[#1da851]" href="https://wa.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-base">chat_bubble</Icon>
+                WhatsApp: +84 855 484 444
               </a>
             </div>
           </div>

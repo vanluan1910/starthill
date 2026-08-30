@@ -74,20 +74,20 @@ function Header({ currentSlide = 0, onNavigate, lang = 'en', onLangChange }) {
     <>
       {/* ===== DESKTOP HEADER ===== */}
       <header
-        className="hidden md:flex fixed top-0 left-0 right-0 z-50 justify-center border-b border-[#d8c6aa]/45 bg-[#fffaf0]/88 px-5 py-3 backdrop-blur-xl"
+        className="hidden md:flex fixed top-0 left-0 right-0 z-50 justify-center border-b border-[#d8c6aa]/45 bg-[#fffaf0]/88 px-4 lg:px-8 py-2.5 backdrop-blur-xl"
       >
         <nav
-          className={`flex w-full max-w-[1180px] items-center justify-between gap-6 ${
+          className={`flex w-full max-w-[1400px] items-center justify-between gap-3 lg:gap-6 ${
             isHomeSlide ? 'text-white' : 'text-[#2f5551]'
           }`}
           aria-label="Primary navigation"
         >
-          <div className="flex items-center gap-6">
+          <div className="flex flex-1 items-center justify-center gap-2.5 md:gap-3 lg:gap-5 xl:gap-6">
             {items.map((item) => (
               <button
                 key={item.slide}
                 aria-current={currentSlide === item.slide ? 'page' : undefined}
-                className={`whitespace-nowrap border-b-2 px-1 py-2 text-xs font-bold transition-all duration-200 lg:text-sm ${
+                className={`whitespace-nowrap border-b-2 px-1 py-1.5 text-xs font-bold transition-all duration-200 lg:text-sm ${
                   currentSlide === item.slide
                     ? isHomeSlide
                       ? 'border-white text-white'
@@ -107,7 +107,7 @@ function Header({ currentSlide = 0, onNavigate, lang = 'en', onLangChange }) {
             <button
               aria-controls={desktopLanguageSelectId}
               aria-expanded={langOpen}
-              className={`flex min-w-[164px] items-center gap-2 rounded-md border px-3 py-2 text-sm font-semibold shadow-sm transition-colors ${
+              className={`flex items-center gap-2 rounded-md border px-3 py-1.5 text-xs lg:text-sm font-semibold shadow-sm transition-colors ${
                 isHomeSlide
                   ? 'border-white/30 bg-black/25 text-white hover:bg-black/35'
                   : 'border-[#d8c6aa]/70 bg-[#fffdf8] text-[#2f5551] hover:border-[#c8b895] hover:bg-white'

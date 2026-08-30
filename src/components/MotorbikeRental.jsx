@@ -1,21 +1,22 @@
 import { t } from '../i18n';
 import EditorialHero from './ui/EditorialHero';
 import Icon from './ui/Icon';
+import SafeImage from './ui/SafeImage';
 import SectionTitle from './ui/SectionTitle';
 
 const HERO_IMAGE = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1785294396/1784015817228_885263377326364022_g7328569027530867083_1d3fe220d1eb437c93bdd91f2e76487e_cjdvyw.jpg';
 
 const SERVICE_IMAGES = {
-  motorbike: 'https://lh3.googleusercontent.com/aida-public/AB6AXuADenTxKtTwTgvGq4poeQXgB_SOt7kkNZoYL0o0Y1FD70LoN1RKSdZ0OYzluQv1KpeFIpKepuva6qZa2lom2Nhha5YkFoAacm13z991hrb8sZUUdVpkLNBEMfcMSL2OG82_TDHPKcBUfCyXh3NpteMp6S0f52LWKj-gAW9W1b7jG5YvtW_jF5fSc5kSaEAHC7QQzFSnmjJveJYGXP3Rk3gJcdTjJT3jEBZ4jHHr9KbXJGZ0kKXLRVgAUQ',
-  laundry: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAix8m2KXKwmTRr9iNx_oLZ5PHZZSA3QKpVL8SDugqqVFGAL_XyWjr_lb9QroX0RLnYqtYhxhcD4YW2OA4lDPPhckfGlLf1Oav8jha7mJzgLtkGZavR4XmOyid7Ouzw7hZsFoZUAIfXSywAO5qSN1LihQ6sg-QWzXG10SyBEDwpnAgSqMKVxNFCWm9_uWZL1diJf5mxNhuWRhkM4xqELUQLd5ov7MOCdJl0Xcw0CWHXnRqy0kVMTJxA0w',
+  motorbike: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80',
+  laundry: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=800&q=80',
   pool: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1785128552/1784015817184_885263377326364022_g7328569027530867083_0d29ffc8f523b49dfbe0d4d55c286ec6_kidd9t.jpg',
-  airport: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVuBPGiHt8Np8uY4mb7qaephTinBUUrviH4rVeYg6X4bQrqIft0TiykYBaGKYQPvtTfx4nmLZ2l8FVaNIiYpwPVoF8f6ArfgLfoC6IheFpm79Z1x9ynrnDDrX3-NcKtGTfmkBuan3Au6pXeNY6ro-fmuY_w0C0eDdJ3OAYXuAjKoE230zQ3vx1IntHtYu1ylZHy10kd4ljYyfzuzJQbd5DFJffVhivk-rQXzZMgwXwqCPy6OK-FlEMRA',
+  airport: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
 };
 
 function ServiceCard({ image, alt, title, price, description, icon, children }) {
   return (
     <article className="flex flex-col overflow-hidden rounded-[28px] border border-[#d2c4bb] bg-[#fbf9f5] shadow-[0_16px_42px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_22px_54px_rgba(50,34,20,0.14)]">
-      <img alt={alt} className="h-48 w-full object-cover" decoding="async" loading="lazy" src={image} />
+      <SafeImage alt={alt} className="h-48 w-full object-cover" src={image} />
       <div className="flex grow flex-col p-6">
         <div className="mb-4 flex items-start justify-between gap-4">
           <div className="flex items-center gap-3">
@@ -95,7 +96,7 @@ function MotorbikeRental({ lang = 'en' }) {
 
         <section className="overflow-hidden rounded-[28px] border border-[#d2c4bb] bg-[#fbf9f5] shadow-[0_16px_42px_rgba(50,34,20,0.08)]">
           <div className="flex flex-col md:flex-row">
-            <img alt={t('services.poolTitle', lang)} className="h-64 w-full object-cover md:h-auto md:w-1/2" decoding="async" loading="lazy" src={SERVICE_IMAGES.pool} />
+            <SafeImage alt={t('services.poolTitle', lang)} className="h-64 w-full object-cover md:h-auto md:w-1/2" src={SERVICE_IMAGES.pool} />
             <div className="flex flex-col justify-center p-6 md:w-1/2 md:p-8">
               <div className="mb-4 flex items-start justify-between gap-4">
                 <h3 className="font-serif text-[28px] font-semibold text-[#322214]">{t('services.poolTitle', lang)}</h3>
@@ -144,7 +145,7 @@ function MotorbikeRental({ lang = 'en' }) {
                 </div>
               </div>
             </div>
-            <img alt={t('services.airportTitle', lang)} className="aspect-video w-full rounded-[24px] object-cover shadow-inner md:aspect-square md:w-1/3" decoding="async" loading="lazy" src={SERVICE_IMAGES.airport} />
+            <SafeImage alt={t('services.airportTitle', lang)} className="aspect-video w-full rounded-[24px] object-cover shadow-inner md:aspect-square md:w-1/3" src={SERVICE_IMAGES.airport} />
           </div>
         </section>
 
@@ -154,10 +155,20 @@ function MotorbikeRental({ lang = 'en' }) {
           <div className="relative">
             <h2 className="mb-4 font-serif text-[28px] font-semibold text-white">{t('services.needAssistance', lang)}</h2>
             <p className="mx-auto mb-8 max-w-lg leading-[1.75] text-white/80">{t('services.assistMsg', lang)}</p>
-            <a className="inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 font-bold text-[#322214] no-underline shadow-lg transition-colors hover:bg-[#fbddc7]" href="tel:0855484444">
-              <Icon>phone_in_talk</Icon>
-              0855 484 444
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-bold text-[#322214] no-underline shadow-lg transition-colors hover:bg-[#fbddc7]" href="tel:+84855484444">
+                <Icon className="text-lg">phone_in_talk</Icon>
+                Call: +84 855 484 444
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-xl bg-[#0068ff] px-6 py-3 font-bold text-white no-underline shadow-lg transition-all hover:bg-[#0052cc]" href="https://zalo.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-lg">chat</Icon>
+                Zalo: +84 855 484 444
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-6 py-3 font-bold text-white no-underline shadow-lg transition-all hover:bg-[#1da851]" href="https://wa.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-lg">chat_bubble</Icon>
+                WhatsApp: +84 855 484 444
+              </a>
+            </div>
           </div>
         </section>
       </div>

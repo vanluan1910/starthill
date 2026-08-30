@@ -1,32 +1,47 @@
 import { t } from '../i18n';
 import EditorialHero from './ui/EditorialHero';
+import SafeImage from './ui/SafeImage';
 import SectionTitle from './ui/SectionTitle';
 
 const BEACHES = [
+  {
+    nameKey: 'explore.baiTruong',
+    distKey: 'explore.baiTruongDist',
+    descKey: 'explore.baiTruongDesc',
+    maps: 'https://maps.app.goo.gl/1uaj2VLmn5iVL59R6',
+    img: '/images/bai-truong.jpg',
+  },
   {
     nameKey: 'explore.ongLang',
     distKey: 'explore.ongLangDist',
     descKey: 'explore.ongLangDesc',
     maps: 'https://maps.google.com/?q=Ong+Lang+Beach+Phu+Quoc',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAZtghKn0CETYngoI7jZlZB1Ny4OSwHa5Un2eDnG7bokklyQo8zfXS3ReQ1ngdEnMVIfWdnXnwkV620hWZmFaRLnYuJ_q7N7FTvxaT8nU8vMhkKNjigSctJn5hO1x3eXhhOy734XYbMTUWSIEY3WHXg37xQRA9I2mOYHaHbsp1Jfwi-khy-x1nzilq_wjY2ZFbOqYsUPtubHJMRfwWZdl8SPPnw5bU_lG-APGLGTK8brBIlBW64DCEKHg',
+    img: 'https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=800&q=80',
   },
   {
     nameKey: 'explore.sao',
     distKey: 'explore.saoDist',
     descKey: 'explore.saoDesc',
     maps: 'https://maps.app.goo.gl/9iW6Lw3dM4jJmL6V6',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAMwEQU1zSwQB-faEdu3XgKEPRlyrt-uaT2NjqwcxzBa0a6LghDg-Fwrtl59CYF8ZrMb-Y5rz1QA6m6EC6Q8RXj8aXruEft2-BJT7KRPUudfm3b8rF8kOJReFh2RjNsY0YpgKhEjgt6cpkgOMK13hLqjJDvVpa77dxF-72vhPN6XBAhmv--_0OOWsE-7AlrW-lvhi0-NLAA8QW2mIqAKmP5_WguKkMhxqStDkcmv8KvZ6CNs6hPXW0Q9A',
+    img: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=800&q=80',
   },
   {
     nameKey: 'explore.khem',
     distKey: 'explore.khemDist',
     descKey: 'explore.khemDesc',
     maps: 'https://maps.app.goo.gl/Jv6o7cYj6eG2mX7r9',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBRZSg3tu4IutMa-rtTJ7-YbLasXn-TwMi4_sHWTMhepOeqJH-oumIYxPVhne_XCMyv_OlK0xSCxo077M1ddAZVqfnHH4WaWETx__z2K5RXYI2JW8refkFTv3zKg-rRFFmanBaimKYVA1agZ_BIKj900w3vknoLJZ3yHnTlf5RbK7_AoGbzin9M2liPQFUzqjO0nWibyBoDlURh_i2jLwsJjjtZS4D1yA99CLFvr4K8vfoT-71Gjqudfg',
+    img: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+  },
+  {
+    nameKey: 'explore.rachVem',
+    distKey: 'explore.rachVemDist',
+    descKey: 'explore.rachVemDesc',
+    maps: 'https://maps.app.goo.gl/zSrRf6qTUcExinfo9',
+    img: '/images/rach-vem.jpg',
   },
 ];
 
-const HERO_IMG = 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxqEqZjBH2I8AXe-2Gl5nxI9Y0Zp56OqMiDgAYG92TX-DUYVS0lkCZ8Ydd4kKqvTsEFbJDPHIumvI-KY_bTUn5gLbbf3I5DlmiX3YGrS3Wpk4DTH8gK4e7TlPI_6uzF-BlngMTwscFXMNTUtJGL_iq9OA97HnjRWwmle1BL-DMJ5UfhclMJbMufVktGbZV6XbEqkkSkNWDm99lTXFt8CN32GYrdVBB7aWtkalAJLErDN3dUiLyIAorSg';
+const HERO_IMG = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80';
 
 function ExplorePhuQuoc({ lang = 'en' }) {
   return (
@@ -48,7 +63,7 @@ function ExplorePhuQuoc({ lang = 'en' }) {
             {BEACHES.map((beach) => (
               <article key={beach.nameKey} className="group overflow-hidden rounded-[24px] border border-[#d2c4bb] bg-[#fbf9f5] shadow-[0_14px_34px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(50,34,20,0.14)]">
                 <div className="aspect-[4/3] overflow-hidden relative">
-                  <img alt={t(beach.nameKey, lang)} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" decoding="async" loading="lazy" src={beach.img} />
+                  <SafeImage alt={t(beach.nameKey, lang)} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src={beach.img} />
                   <div className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#322214] shadow-sm backdrop-blur">
                     <span className="material-symbols-outlined text-sm text-[#622a11]">schedule</span>
                     {t('explore.open24h', lang)}
@@ -74,12 +89,18 @@ function ExplorePhuQuoc({ lang = 'en' }) {
           <div className="relative">
             <h2 className="mb-4 font-serif text-[38px] font-bold text-white md:text-[48px]">{t('explore.ctaTitle', lang)}</h2>
             <p className="mx-auto mb-8 max-w-2xl text-[16px] leading-[1.75] text-white/80 md:text-[18px]">{t('explore.ctaDesc', lang)}</p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 font-bold text-[#322214] no-underline transition-colors hover:bg-[#fbddc7]" href="tel:0855484444">
-                {t('explore.bookStay', lang)}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <a className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 font-bold text-[#322214] no-underline transition-colors hover:bg-[#fbddc7]" href="tel:+84855484444">
+                <span className="material-symbols-outlined text-lg">call</span>
+                Call: +84 855 484 444
               </a>
-              <a className="inline-flex items-center justify-center rounded-xl border-2 border-white/30 px-8 py-4 font-bold text-white no-underline transition-all hover:bg-white hover:text-[#322214]" href="tel:0855484444">
-                {t('explore.contactExpert', lang)}
+              <a className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0068ff] px-6 py-3.5 font-bold text-white no-underline transition-all hover:bg-[#0052cc]" href="https://zalo.me/84855484444" rel="noreferrer" target="_blank">
+                <span className="material-symbols-outlined text-lg">chat</span>
+                Zalo: +84 855 484 444
+              </a>
+              <a className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25d366] px-6 py-3.5 font-bold text-white no-underline transition-all hover:bg-[#1da851]" href="https://wa.me/84855484444" rel="noreferrer" target="_blank">
+                <span className="material-symbols-outlined text-lg">chat_bubble</span>
+                WhatsApp: +84 855 484 444
               </a>
             </div>
           </div>

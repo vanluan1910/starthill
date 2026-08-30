@@ -1,35 +1,36 @@
 import { t } from '../i18n';
 import EditorialHero from './ui/EditorialHero';
 import Icon from './ui/Icon';
+import SafeImage from './ui/SafeImage';
 import SectionTitle from './ui/SectionTitle';
 
-const HERO_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuB0O9F3P4gNJtCDR5fBZdah7HcY-OY1ZuOJL_yM77hhUbogVkABn7IWH11TO26BSla_U9NncQM6NKWNN2lHI7aKjcg2nmy63ooNokb6PCnWenwF24r4zJdqzdKi5r71tlwbYpNCOROmJVNUCXFMrF6BB8ROFGvzyNWzKxNmx_mxspWB3TwI4D8MJs0JfK8zRUM7NxMiEgnbQ-r1RooK2EMG-JvG965efG8F2W_Nwu1JPfPNZIch9On3kw';
-const TAXI_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuAKdqY9myv4zN6rRH5ZxwYQybhSwkui5OzSwVy60ak5qvPAKS44Ds_AuoG0SC_7qfQGKncn5swNFCS_WVXa5dR3TzeP9pLBaqo4yoOlV0Z5scmwUpJ5fYQr-Upe5pigutn6dSmIEu2oAMkjhsQfB7w8g6uB8ubukYGNM-WXFgJq89nvLd9Rxl4nu-KEvTN9843Ua3zLtoLlnET1aX1WoaK9kzU1lp6jxiZScaBNf5p2WF8gc8LGeMJAgg';
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1600&q=80';
+const TAXI_IMAGE = 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=800&q=80';
 
 const FEATURED_TOURS = [
   {
     nameKey: 'tours.cableCar',
     descKey: 'tours.cableCarDesc',
     icon: 'tram',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuARgnI5u0XhY-dF1uULRx9tf-UBSHBEvtCLOdm9ijHyARCAguB_SJmx-udaEmVmRpItvlZnLypHFMGi0Ou95-HrK3oQ5oWMazDkIIbbgmehZVal-MZTL7l_VvWfwEMlCjZGKXYKOAbNL3EK_PJsZZLKOiZAQw1JnByUZZbvyr8U3szXIgU2-30gvSYS-1a1NiiAXDNB2szRmmtoS46YszzrOAW3FxU-t5FhflyFmZT4AMksciJ16fLVTQ',
+    img: 'https://images.unsplash.com/photo-1508672019048-805479767384?auto=format&fit=crop&w=800&q=80',
   },
   {
     nameKey: 'tours.vinwonders',
     descKey: 'tours.vinwondersDesc',
     icon: 'sports_esports',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCaXafWcK059GTjnktRNRGdS1SN7HzohYSlbC2cVyzFosP59Rrmw3b_PvZqOTsXwX7fM5gWbg1jUhUx8Xp77xeExtc8uk63xeSdq3X6mCsbVTGUP4I8WwE9bB8Kc9Bm34DtJR0Jd9aaJxOi5D5mD4G2yzcxUORpRdQH_ImmD9x3MR76AQn3eaKZ3FMRrYt9kxSoHaSk0oBmvP2s6WLsgPiZUvYF88jX0VfArq5Ajvj_Ka8bTFGqHmRktw',
+    img: 'https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=800&q=80',
   },
   {
     nameKey: 'tours.safari',
     descKey: 'tours.safariDesc',
     icon: 'pets',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAsaX53jIim6nXojbfPLD1k3awOaHgEs8W38QH-A5975ISoGRI8n8az42XY6-U8XPRfjALG9Is41BZfGnzr64pdPZjN3DNzVn3zaU6YrgO4SbfG8YJDDwoU2s380jICts9kjQhutEWEMgmR4_qFwwEJOKbHpth8H78rXWPGd7F8hfLrFvu84A2gNJKmhcAvSKeC4JGhIzIVTVscFzDsHRT8s8aC9Zofz_CmmEsPTZgz83l_0ua6NfbaaQ',
+    img: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=800&q=80',
   },
   {
     nameKey: 'tours.kissShow',
     descKey: 'tours.kissShowDesc',
     icon: 'theater_comedy',
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDGHHIJgcPULIbCsMiY2NDCx2pyWiCnBXwtlrGc01qwMqXza9jX8zHjf8cX0NPhCTUVNrarfr2Tqn3UX8QlTXAT3q8YKQvGrtYGPFwCpheRnx4xujJqmj71zqJ6tVejEdt9TSwliRNS08PocjZDtJJphe-uGMQJCcVWMuswVxIA7Oxqbu8B0P1anwcei1WO_y3RpuYpIlDa6Xz03oDV04h_EKQpXIDOM6aikBNDMhozJzxjdcINdMQjLg',
+    img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
@@ -44,7 +45,7 @@ function FeaturedTourCard({ tour, lang }) {
   return (
     <article className="group overflow-hidden rounded-[24px] border border-[#d2c4bb] bg-[#f5f3ef] shadow-[0_14px_34px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(50,34,20,0.14)]">
       <div className="h-48 overflow-hidden">
-        <img alt={t(tour.nameKey, lang)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" decoding="async" loading="lazy" src={tour.img} />
+        <SafeImage alt={t(tour.nameKey, lang)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src={tour.img} />
       </div>
       <div className="p-5">
         <div className="mb-3 flex items-center gap-3">
@@ -124,7 +125,7 @@ function ToursTickets({ lang = 'en' }) {
             </div>
             <div className="relative w-full lg:w-1/2">
               <div className="overflow-hidden rounded-[24px] border-4 border-white shadow-2xl">
-                <img alt={t('tours.taxiTitle', lang)} className="h-auto w-full object-cover" decoding="async" loading="lazy" src={TAXI_IMAGE} />
+                <SafeImage alt={t('tours.taxiTitle', lang)} className="h-auto w-full object-cover" src={TAXI_IMAGE} />
               </div>
               <div className="absolute -bottom-5 left-5 hidden rounded-xl bg-white p-5 shadow-lg md:block">
                 <div className="flex items-center gap-4">
@@ -149,9 +150,23 @@ function ToursTickets({ lang = 'en' }) {
           <p className="mx-auto mb-8 max-w-2xl text-[16px] leading-[1.75] text-[#4e453e]">{t('tours.recommend', lang)}</p>
           <div className="mx-auto max-w-xl rounded-[24px] border border-[#d2c4bb] bg-[#efeeea] p-7 shadow-sm">
             <p className="mb-2 text-[11px] font-extrabold uppercase tracking-[0.22em] text-[#4e453e]">{t('tours.receptionHotline', lang)}</p>
-            <a className="font-serif text-[38px] font-bold text-[#461501] no-underline transition-opacity hover:opacity-80 md:text-[48px]" href="tel:0855484444">
-              0855 484 444
-            </a>
+            <div className="mb-4 font-serif text-[32px] font-bold text-[#461501] md:text-[42px]">
+              +84 855 484 444
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a className="inline-flex items-center gap-2 rounded-xl bg-[#461501] px-5 py-2.5 text-sm font-bold text-white no-underline shadow-sm transition-all hover:bg-[#322214]" href="tel:+84855484444">
+                <Icon className="text-base">call</Icon>
+                Call
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-xl bg-[#0068ff] px-5 py-2.5 text-sm font-bold text-white no-underline shadow-sm transition-all hover:bg-[#0052cc]" href="https://zalo.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-base">chat</Icon>
+                Zalo
+              </a>
+              <a className="inline-flex items-center gap-2 rounded-xl bg-[#25d366] px-5 py-2.5 text-sm font-bold text-white no-underline shadow-sm transition-all hover:bg-[#1da851]" href="https://wa.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-base">chat_bubble</Icon>
+                WhatsApp
+              </a>
+            </div>
           </div>
           <p className="mt-8 font-serif text-2xl italic text-[#322214]">{t('services.wishMsg', lang)}</p>
         </section>

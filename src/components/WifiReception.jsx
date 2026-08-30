@@ -1,4 +1,5 @@
 import { t } from '../i18n';
+import SafeImage from './ui/SafeImage';
 
 const HERO_IMAGE = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1785128650/c064cf04-6c43-4c00-b570-433efb87ad50_yrtzwz.png';
 
@@ -30,7 +31,7 @@ function WifiReception({ lang = 'en' }) {
     <main className="editorial-page min-h-full px-4 pb-24 pt-24 font-sans text-[#1f1b17] md:px-10 md:pb-16 md:pt-28">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
         <section className="relative min-h-[360px] overflow-hidden rounded-[28px] border border-[#d8c6aa]/55 bg-[#eae1da] shadow-[0_22px_60px_rgba(30,53,49,0.14)] md:min-h-[430px]">
-          <img alt={t('wifi.heroAlt', lang)} className="absolute inset-0 h-full w-full object-cover" decoding="async" loading="lazy" src={HERO_IMAGE} />
+          <SafeImage alt={t('wifi.heroAlt', lang)} className="absolute inset-0 h-full w-full object-cover" src={HERO_IMAGE} />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           <div className="absolute bottom-0 left-0 max-w-2xl p-6 md:p-9">
             <span className="mb-3 block text-[11px] font-extrabold uppercase tracking-[0.24em] text-white/[0.84]">
@@ -86,13 +87,17 @@ function WifiReception({ lang = 'en' }) {
               </div>
             </div>
             <div className="mt-7 grid gap-3">
-              <a className="flex items-center gap-3 rounded-2xl bg-white/[0.62] px-4 py-3 font-bold text-[#153b39] no-underline" href="tel:0855484444">
+              <a className="flex items-center gap-3 rounded-2xl bg-white/[0.62] px-4 py-3 font-bold text-[#153b39] no-underline hover:bg-white" href="tel:+84855484444">
                 <Icon className="text-[#9a442d]">call</Icon>
-                <span>0855 484 444</span>
+                <span>Call: +84 855 484 444</span>
               </a>
-              <a className="flex items-center gap-3 rounded-2xl bg-white/[0.62] px-4 py-3 font-bold text-[#153b39] no-underline" href="https://api.whatsapp.com/send?phone=%2B84855484444" rel="noreferrer" target="_blank">
-                <Icon className="text-green-600">chat</Icon>
-                <span>+84 855 484 444</span>
+              <a className="flex items-center gap-3 rounded-2xl bg-blue-50/80 px-4 py-3 font-bold text-blue-700 no-underline hover:bg-blue-100" href="https://zalo.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-blue-600">chat</Icon>
+                <span>Zalo: +84 855 484 444</span>
+              </a>
+              <a className="flex items-center gap-3 rounded-2xl bg-emerald-50/80 px-4 py-3 font-bold text-emerald-700 no-underline hover:bg-emerald-100" href="https://wa.me/84855484444" rel="noreferrer" target="_blank">
+                <Icon className="text-emerald-600">chat_bubble</Icon>
+                <span>WhatsApp: +84 855 484 444</span>
               </a>
             </div>
           </article>
@@ -115,11 +120,9 @@ function WifiReception({ lang = 'en' }) {
         <section className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {IMAGES.map((image) => (
             <figure key={image.labelKey} className="group relative h-64 overflow-hidden rounded-[24px] border border-[#d8c6aa]/55 bg-[#eae1da] shadow-[0_14px_34px_rgba(30,53,49,0.08)]">
-                <img
+                <SafeImage
                   alt={t(image.altKey, lang)}
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  decoding="async"
-                  loading="lazy"
                   src={image.src}
                 />
               <div className="absolute inset-0 bg-gradient-to-t from-[#153b39]/70 to-transparent" />

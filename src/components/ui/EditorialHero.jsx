@@ -1,3 +1,5 @@
+import SafeImage from './SafeImage';
+
 function EditorialHero({
   image,
   alt,
@@ -8,7 +10,7 @@ function EditorialHero({
 }) {
   return (
     <section className="relative min-h-[360px] overflow-hidden rounded-[28px] border border-[#d2c4bb] bg-[#e4e2de] shadow-[0_22px_60px_rgba(50,34,20,0.14)] md:min-h-[430px]">
-      <img alt={alt} className="absolute inset-0 h-full w-full object-cover" decoding="async" loading="lazy" src={image} />
+      <SafeImage alt={alt} className="absolute inset-0 h-full w-full object-cover" src={image} />
       <div className={`absolute inset-0 ${overlayClassName}`} />
       <div className="absolute bottom-0 left-0 max-w-2xl p-6 md:p-9">
         {kicker ? (

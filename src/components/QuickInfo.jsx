@@ -1,4 +1,5 @@
 import { t } from '../i18n';
+import SafeImage from './ui/SafeImage';
 
 const HERO_IMAGE = 'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1600&q=80';
 const BREAKFAST_IMAGE = 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80';
@@ -25,7 +26,7 @@ function QuickInfo({ lang = 'en' }) {
     <main className="editorial-page min-h-full px-4 pb-24 pt-24 font-sans text-[#173331] md:px-10 md:pb-16 md:pt-28">
       <div className="mx-auto w-full max-w-5xl">
         <section className="relative mb-10 h-[330px] overflow-hidden rounded-[28px] border border-[#d8c6aa]/55 shadow-[0_22px_60px_rgba(30,53,49,0.14)] md:h-[400px]">
-          <img alt="" className="absolute inset-0 h-full w-full object-cover" decoding="async" loading="lazy" src={HERO_IMAGE} />
+          <SafeImage alt="" className="absolute inset-0 h-full w-full object-cover" src={HERO_IMAGE} />
           <div className="absolute inset-0 bg-black/35" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           <div className="absolute bottom-0 left-0 max-w-2xl p-6 md:p-10">
@@ -80,7 +81,7 @@ function QuickInfo({ lang = 'en' }) {
                   </div>
                 </div>
                 <div className="h-52 w-full shrink-0 overflow-hidden rounded-2xl md:h-48 md:w-48">
-                  <img alt="" className="h-full w-full object-cover" decoding="async" loading="lazy" src={BREAKFAST_IMAGE} />
+                  <SafeImage alt="" className="h-full w-full object-cover" src={BREAKFAST_IMAGE} />
                 </div>
               </div>
             </section>
@@ -104,11 +105,34 @@ function QuickInfo({ lang = 'en' }) {
                 </div>
               </div>
               <div className="mt-8 rounded-2xl bg-white/10 p-5">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 mb-4">
                   <div className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#ffdbd2]">
                     <InfoIcon icon="call" className="text-[20px] text-[#9a442d]" />
                   </div>
                   <p className="text-sm leading-relaxed text-white/[0.76]">{t('quickInfo.lateCheckoutNote', lang)}</p>
+                </div>
+                <div className="grid grid-cols-1 gap-2 text-xs">
+                  <a className="flex items-center justify-between rounded-xl bg-white/15 px-3.5 py-2.5 font-bold text-white no-underline transition-colors hover:bg-white/25" href="tel:+84855484444">
+                    <span className="flex items-center gap-2">
+                      <InfoIcon icon="call" className="text-[18px] text-[#ffdbd2]" />
+                      <span>Call Hotline</span>
+                    </span>
+                    <span className="text-[#ffdbd2]">+84 855 484 444</span>
+                  </a>
+                  <a className="flex items-center justify-between rounded-xl bg-[#0068ff]/30 px-3.5 py-2.5 font-bold text-white no-underline transition-colors hover:bg-[#0068ff]/50" href="https://zalo.me/84855484444" rel="noreferrer" target="_blank">
+                    <span className="flex items-center gap-2">
+                      <InfoIcon icon="chat" className="text-[18px] text-[#ffdbd2]" />
+                      <span>Zalo</span>
+                    </span>
+                    <span className="text-[#ffdbd2]">+84 855 484 444</span>
+                  </a>
+                  <a className="flex items-center justify-between rounded-xl bg-[#25d366]/30 px-3.5 py-2.5 font-bold text-white no-underline transition-colors hover:bg-[#25d366]/50" href="https://wa.me/84855484444" rel="noreferrer" target="_blank">
+                    <span className="flex items-center gap-2">
+                      <InfoIcon icon="chat_bubble" className="text-[18px] text-[#ffdbd2]" />
+                      <span>WhatsApp</span>
+                    </span>
+                    <span className="text-[#ffdbd2]">+84 855 484 444</span>
+                  </a>
                 </div>
               </div>
             </section>
