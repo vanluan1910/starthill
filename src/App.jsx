@@ -47,9 +47,7 @@ function getHashSlide() {
 }
 
 function getInitialSlide() {
-  const fromHash = getHashSlide();
-  if (fromHash !== undefined) return fromHash;
-  return 0; // Always start on Home screen (slide 0) when scanning QR code
+  return 0; // Always start on Home screen (slide 0) when scanning any QR code or visiting site
 }
 
 function App() {
@@ -59,6 +57,9 @@ function App() {
   useEffect(() => {
     try {
       localStorage.removeItem(SLIDE_KEY);
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname);
+      }
     } catch { /* ignore */ }
   }, []);
 
