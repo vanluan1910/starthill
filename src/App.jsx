@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState, useCallback, useEffect } from 'react';
+import { lazy, Suspense, useState, useCallback, useEffect, useRef } from 'react';
 import Header from './components/Header';
 import SlideBackground from './components/SlideBackground';
 import WelcomePage from './components/WelcomePage';
@@ -53,6 +53,7 @@ function getInitialSlide() {
 function App() {
   const [slide, setSlide] = useState(getInitialSlide);
   const [lang, setLang] = useState('en');
+  const touchStartRef = useRef({ x: 0, y: 0, time: 0 });
 
   useEffect(() => {
     try {
@@ -98,11 +99,55 @@ function App() {
     return () => window.removeEventListener('popstate', handlePop);
   }, []);
 
+  const handleTouchStart = (e) => {
+    if (e.touches.length !== 1) return;
+    touchStartRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+      time: Date.now(),
+    };
+  };
+
+  const handleTouchEnd = (e) => {
+    if (!touchStartRef.current.time) return;
+    const touchEnd = e.changedTouches[0];
+    if (!touchEnd) return;
+
+    const deltaX = touchEnd.clientX - touchStartRef.current.x;
+    const deltaY = touchEnd.clientY - touchStartRef.current.y;
+    const deltaTime = Date.now() - touchStartRef.current.time;
+
+    touchStartRef.current.time = 0;
+
+    // Minimum swipe threshold (px) and maximum time duration (ms)
+    const SWIPE_THRESHOLD = 40;
+    const MAX_SWIPE_TIME = 600;
+
+    if (
+      deltaTime <= MAX_SWIPE_TIME &&
+      Math.abs(deltaX) >= SWIPE_THRESHOLD &&
+      Math.abs(deltaX) > Math.abs(deltaY) * 1.3
+    ) {
+      if (deltaX < 0) {
+        // Swiped Left -> Next Slide
+        goTo(slide + 1);
+      } else {
+        // Swiped Right -> Previous Slide
+        goTo(slide - 1);
+      }
+    }
+  };
+
   return (
     <div className="bg-background antialiased">
       <Header currentSlide={slide} onNavigate={goTo} lang={lang} onLangChange={setLang} />
 
-      <div className="h-screen overflow-hidden" style={{ height: '100dvh' }}>
+      <div
+        className="h-screen overflow-hidden touch-pan-y"
+        style={{ height: '100dvh' }}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${slide * 100}%)` }}
@@ -151,21 +196,43 @@ function App() {
         </div>
       </div>
 
-      <nav className="fixed bottom-4 left-0 right-0 flex justify-center z-50 pointer-events-none md:bottom-6">
-        <div className="flex gap-2.5 rounded-full border border-[#d8c6aa]/70 bg-[#fffaf0]/82 px-4 py-2.5 shadow-[0_16px_40px_rgba(30,53,49,0.14)] backdrop-blur pointer-events-auto">
+      <nav className="fixed bottom-4 left-0 right-0 flex items-center justify-center gap-2 z-50 pointer-events-none md:bottom-6">
+        {slide > 0 && (
+          <button
+            aria-label="Previous slide"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8c6aa]/70 bg-[#fffaf0]/90 text-[#153b39] shadow-md backdrop-blur pointer-events-auto transition-all active:scale-90"
+            onClick={() => goTo(slide - 1)}
+            type="button"
+          >
+            <span className="material-symbols-outlined text-lg">chevron_left</span>
+          </button>
+        )}
+
+        <div className="flex gap-2 rounded-full border border-[#d8c6aa]/70 bg-[#fffaf0]/82 px-3.5 py-2.5 shadow-[0_16px_40px_rgba(30,53,49,0.14)] backdrop-blur pointer-events-auto">
           {Array.from({ length: TOTAL_SLIDES }).map((_, i) => (
             <button
               key={i}
               aria-label={`Go to slide ${i + 1}`}
               aria-current={slide === i ? 'page' : undefined}
               className={`h-2.5 rounded-full transition-all duration-300 ${
-                slide === i ? 'w-7 bg-[#153b39]' : 'w-2.5 bg-[#c8b895] hover:bg-[#c8913c]'
+                slide === i ? 'w-6 bg-[#153b39]' : 'w-2.5 bg-[#c8b895] hover:bg-[#c8913c]'
               }`}
               onClick={() => goTo(i)}
               type="button"
             />
           ))}
         </div>
+
+        {slide < TOTAL_SLIDES - 1 && (
+          <button
+            aria-label="Next slide"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#d8c6aa]/70 bg-[#fffaf0]/90 text-[#153b39] shadow-md backdrop-blur pointer-events-auto transition-all active:scale-90"
+            onClick={() => goTo(slide + 1)}
+            type="button"
+          >
+            <span className="material-symbols-outlined text-lg">chevron_right</span>
+          </button>
+        )}
       </nav>
     </div>
   );
