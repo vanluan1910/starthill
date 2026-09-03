@@ -29,6 +29,19 @@ const HASH_TO_SLIDE = {
   tips: 9,
 };
 
+const SLIDE_TO_HASH = [
+  'home',
+  'info',
+  'wifi',
+  'rules',
+  'services',
+  'tours',
+  'explore',
+  'food',
+  'attractions',
+  'tips',
+];
+
 function SlideFallback() {
   return (
     <SlideBackground className="flex items-center justify-center text-[#003333]">
@@ -47,22 +60,27 @@ function getHashSlide() {
 }
 
 function getInitialSlide() {
-  return 0; // Always start on Home screen (slide 0) when scanning any QR code or visiting site
+  try {
+    const fromHash = getHashSlide();
+    if (fromHash !== undefined) return fromHash;
+
+    const saved = localStorage.getItem(SLIDE_KEY) || sessionStorage.getItem(SLIDE_KEY);
+    if (saved !== null) {
+      const parsed = parseInt(saved, 10);
+      if (!isNaN(parsed) && parsed >= 0 && parsed < TOTAL_SLIDES) {
+        return parsed;
+      }
+    }
+  } catch {
+    /* ignore */
+  }
+  return 0;
 }
 
 function App() {
   const [slide, setSlide] = useState(getInitialSlide);
   const [lang, setLang] = useState('en');
   const touchStartRef = useRef({ x: 0, y: 0, time: 0 });
-
-  useEffect(() => {
-    try {
-      localStorage.removeItem(SLIDE_KEY);
-      if (window.location.hash) {
-        window.history.replaceState(null, '', window.location.pathname);
-      }
-    } catch { /* ignore */ }
-  }, []);
 
   useEffect(() => {
     const markIcons = () => {
@@ -78,7 +96,18 @@ function App() {
   }, []);
 
   const goTo = useCallback((index) => {
-    setSlide(Math.max(0, Math.min(TOTAL_SLIDES - 1, index)));
+    const target = Math.max(0, Math.min(TOTAL_SLIDES - 1, index));
+    setSlide(target);
+    try {
+      localStorage.setItem(SLIDE_KEY, target.toString());
+      sessionStorage.setItem(SLIDE_KEY, target.toString());
+      const hashName = SLIDE_TO_HASH[target];
+      if (hashName) {
+        window.history.replaceState(null, '', `#${hashName}`);
+      }
+    } catch {
+      /* ignore */
+    }
   }, []);
 
   useEffect(() => {
@@ -89,15 +118,6 @@ function App() {
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, [goTo]);
-
-  useEffect(() => {
-    window.history.pushState(null, '', window.location.href);
-    const handlePop = () => {
-      window.history.pushState(null, '', window.location.href);
-    };
-    window.addEventListener('popstate', handlePop);
-    return () => window.removeEventListener('popstate', handlePop);
-  }, []);
 
   const handleTouchStart = (e) => {
     if (e.touches.length !== 1) return;
