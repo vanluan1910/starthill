@@ -15,7 +15,7 @@
   min-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: auto;
   -webkit-overflow-scrolling: touch;
   color: var(--sh-ink);
   font-family: Inter, "Plus Jakarta Sans", system-ui, sans-serif;

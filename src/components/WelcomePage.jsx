@@ -51,7 +51,7 @@ function WelcomePage({ lang = 'en', onNavigate }) {
       <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,17,16,0.82)_0%,rgba(0,17,16,0.58)_42%,rgba(0,17,16,0.18)_72%,rgba(0,17,16,0.08)_100%)]" />
       <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.18)_0%,rgba(0,0,0,0.05)_45%,rgba(0,0,0,0.48)_100%)]" />
 
-      <div className="relative z-10 mx-auto flex h-full min-h-full w-full max-w-[1280px] flex-col overflow-x-hidden overflow-y-auto overscroll-y-contain touch-pan-y px-4 pb-28 pt-16 sm:px-6 sm:pt-20 md:grid md:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.75fr)] md:items-center md:gap-12 md:px-16 md:pb-20 md:pt-24 lg:gap-20">
+      <div className="relative z-10 mx-auto flex h-full min-h-full w-full max-w-[1280px] flex-col overflow-x-hidden overflow-y-auto overscroll-y-auto touch-pan-y px-4 pb-28 pt-16 sm:px-6 sm:pt-20 md:grid md:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.75fr)] md:items-center md:gap-12 md:px-16 md:pb-20 md:pt-24 lg:gap-20">
         <motion.div
           className="flex min-h-0 flex-1 flex-col justify-start py-2 sm:py-4 md:justify-center md:py-0 text-center md:text-left"
           initial="hidden"
