@@ -179,6 +179,92 @@ function Attractions({ lang = 'en' }) {
               <SquareCard key={item.nameKey} item={item} lang={lang} />
             ))}
           </div>
+
+          {/* Mass Schedule – Duong Dong Parish Church */}
+          <div className="mt-6 overflow-hidden rounded-[24px] bg-[#fbf9f5] shadow-[0_14px_34px_rgba(50,34,20,0.08)] border border-[#e8dfd5]">
+            <div className="flex flex-col lg:flex-row">
+              {/* Church Image Banner */}
+              <div className="relative aspect-[16/9] lg:aspect-auto lg:w-5/12 overflow-hidden shrink-0">
+                <SafeImage
+                  alt={t('attr.churchName', lang)}
+                  className="h-full w-full object-cover"
+                  src="https://images.unsplash.com/photo-1548625361-180a373b53c7?auto=format&fit=crop&w=800&q=80"
+                />
+                <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">
+                  <Icon className="text-sm text-[#e8c39e]">church</Icon>
+                  <span>{t('attr.churchName', lang)}</span>
+                </div>
+              </div>
+
+              {/* Schedule Info */}
+              <div className="flex flex-1 flex-col justify-between p-5 md:p-6">
+                <div>
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-[#e8dfd5] pb-3 mb-4">
+                    <h3 className="font-serif text-lg font-bold text-[#322214]">
+                      {t('attr.churchTitle', lang)}
+                    </h3>
+                    <a
+                      className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full bg-[#322214] px-4 py-1.5 text-xs font-bold text-white no-underline transition-all hover:bg-[#622a11]"
+                      href="https://maps.app.goo.gl/ctf1g9iH5J3baDzK7"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      <Icon className="text-sm">explore</Icon>
+                      {t('attr.viewMaps', lang)}
+                    </a>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div className="rounded-[18px] bg-white/80 p-4 border border-[#eee6dc]">
+                      <div className="mb-2 flex items-center gap-2 text-sm font-bold text-[#322214]">
+                        <Icon className="text-base text-[#622a11]">calendar_today</Icon>
+                        {t('attr.monSat', lang)}
+                      </div>
+                      <ul className="space-y-1.5 text-xs text-[#4e453e]">
+                        <li className="flex items-center gap-2">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#622a11]" />
+                          {t('attr.morningMass', lang)}
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#622a11]" />
+                          {t('attr.eveningMass', lang)}
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="rounded-[18px] bg-white/80 p-4 border border-[#eee6dc]">
+                      <div className="mb-2 flex items-center gap-2 text-sm font-bold text-[#322214]">
+                        <Icon className="text-base text-[#622a11]">event</Icon>
+                        {t('attr.sunday', lang)}
+                      </div>
+                      <div className="grid grid-cols-2 gap-2 text-xs text-[#4e453e]">
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#622a11]" />
+                          {t('attr.mass1', lang)}
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#622a11]" />
+                          {t('attr.mass2', lang)}
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#622a11]" />
+                          {t('attr.mass3', lang)}
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#622a11]" />
+                          {t('attr.mass4', lang)}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="mt-4 text-center font-serif text-xs italic text-[#622a11]/90">
+                  "{t('attr.churchBlessing', lang)}"
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section>

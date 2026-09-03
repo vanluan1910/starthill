@@ -279,7 +279,7 @@ const data = {
   'attr.filterSearch': { en: 'Filter Search', vi: 'Lọc tìm kiếm', zh: '筛选搜索', ko: '검색 필터', ru: 'Фильтр поиска' },
   'attr.openMap': { en: 'Open Map', vi: 'Mở bản đồ', zh: '打开地图', ko: '지도 열기', ru: 'Открыть карту' },
   'attr.entertainment': { en: 'Entertainment & Recreation', vi: 'Khu vui chơi & Giải trí', zh: '娱乐与休闲', ko: '놀이 및 엔터테인먼트', ru: 'Развлечения и отдых' },
-  'attr.sightseeingHeritage': { en: 'Sightseeing & Heritage', vi: 'Tham quan & Di tích', zh: '观光与遗迹', ko: '관광 및 유산', ru: 'Экскурсии и наследие' },
+  'attr.sightseeingHeritage': { en: 'Religious & Cultural Sites', vi: 'Điểm tâm linh & Văn hóa', zh: '宗教与文化景点', ko: '종교 및 문화 유적지', ru: 'Религиозные и культурные достопримечательности' },
   'attr.traditionalCrafts': { en: 'Traditional Craft Villages', vi: 'Làng nghề truyền thống', zh: '传统手工艺村', ko: '전통 공예 마을', ru: 'Традиционные ремесленные деревни' },
   'attr.traditionalCraftsDesc': { en: "Discover the ancient crafts that define the island's heritage.", vi: 'Khám phá những nghề thủ công lâu đời làm nên di sản của hòn đảo.', zh: '探索定义岛屿遗产的古老手工艺。', ko: '섬의 유산을 이루는 오래된 전통 공예를 발견하세요.', ru: 'Откройте древние ремесла, определяющие наследие острова.' },
   'attr.time3540': { en: '35-40 mins away', vi: 'Cách 35-40 phút', zh: '约35-40分钟', ko: '35-40분 거리', ru: '35-40 минут' },
@@ -379,6 +379,19 @@ const data = {
   'tips.happyHoliday': { en: '🌿 Have a wonderful holiday!', vi: '🌿 Chúc bạn kỳ nghỉ tuyệt vời!', zh: '🌿 祝您假期愉快！', ko: '🌿 즐거운 휴가 보내세요!', ru: '🌿 Желаем вам прекрасного отдыха!' },
   'tips.faqLuggage': { en: '🧳 Can I leave my luggage after check-out?', vi: '🧳 Tôi có thể gửi hành lý sau khi trả phòng không?', zh: '🧳 退房后可以寄存行李吗？', ko: '🧳 체크아웃 후 수하물을 맡길 수 있나요?', ru: '🧳 Могу ли я оставить багаж после выезда?' },
   'tips.faqTaxi': { en: '🚕 Can you help me book a taxi?', vi: '🚕 Bạn có thể giúp tôi đặt taxi không?', zh: '🚕 你能帮我预订出租车吗？', ko: '🚕 택시 예약을 도와주실 수 있나요?', ru: '🚕 Можете ли вы помочь мне заказать такси?' },
+
+  /* === CHURCH MASS SCHEDULE === */
+  'attr.churchTitle': { en: 'MASS SCHEDULE – DUONG DONG PARISH CHURCH', vi: 'LỊCH THÁNH LỄ – GIÁO XỨ DƯƠNG ĐÔNG', zh: '弥撒时间表 – 阳东天主教堂', ko: '미사 시간표 – 즈엉동 성당', ru: 'РАСПИСАНИЕ МЕСС – ПРИХОД ДУОНГ ДОНГ' },
+  'attr.churchName': { en: 'Duong Dong Parish Church', vi: 'Giáo xứ Dương Đông', zh: '阳东天主教堂', ko: '즈엉동 성당', ru: 'Приходская церковь Дуонг Донг' },
+  'attr.monSat': { en: 'Monday – Saturday', vi: 'Thứ Hai – Thứ Bảy', zh: '周一至周六', ko: '월요일 – 토요일', ru: 'Понедельник – Суббота' },
+  'attr.morningMass': { en: '5:00 AM – Morning Mass', vi: '05:00 – Thánh lễ Sáng', zh: '05:00 – 早弥撒', ko: '오전 5:00 – 아침 미사', ru: '05:00 – Утренняя месса' },
+  'attr.eveningMass': { en: '6:00 PM – Evening Mass', vi: '18:00 – Thánh lễ Chiều', zh: '18:00 – 晚弥撒', ko: '오후 6:00 – 저녁 미사', ru: '18:00 – Вечерняя месса' },
+  'attr.sunday': { en: 'Sunday', vi: 'Chủ Nhật', zh: '周日', ko: '일요일', ru: 'Воскресенье' },
+  'attr.mass1': { en: 'Mass 1: 5:00 AM', vi: 'Lễ 1: 05:00', zh: '弥撒 1: 05:00', ko: '미사 1: 오전 5:00', ru: 'Месса 1: 05:00' },
+  'attr.mass2': { en: 'Mass 2: 7:00 AM', vi: 'Lễ 2: 07:00', zh: '弥撒 2: 07:00', ko: '미사 2: 오전 7:00', ru: 'Месса 2: 07:00' },
+  'attr.mass3': { en: 'Mass 3: 4:00 PM', vi: 'Lễ 3: 16:00', zh: '弥撒 3: 16:00', ko: '미사 3: 오후 4:00', ru: 'Месса 3: 16:00' },
+  'attr.mass4': { en: 'Mass 4: 6:00 PM', vi: 'Lễ 4: 18:00', zh: '弥撒 4: 18:00', ko: '미사 4: 오후 6:00', ru: 'Месса 4: 18:00' },
+  'attr.churchBlessing': { en: 'Wishing you a peaceful and meaningful stay.', vi: 'Chúc quý khách một kỳ nghỉ an lành và ý nghĩa.', zh: '祝您度过一段和平而富有意义的时光。', ko: '평화롭고 뜻깊은 투숙이 되시기를 바랍니다.', ru: 'Желаем вам мирного и благословенного отдыха.' },
 };
 
 export function t(key, lang = 'en') {
