@@ -3,19 +3,10 @@ import SafeImage from './ui/SafeImage';
 
 const HERO_IMAGE = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1785128650/c064cf04-6c43-4c00-b570-433efb87ad50_yrtzwz.png';
 
-const SERVICES = [
-  { key: 'wifi.serviceTourInfo', icon: 'map' },
-  { key: 'wifi.serviceTaxi', icon: 'local_taxi' },
-  { key: 'wifi.serviceAirport', icon: 'flight_takeoff' },
-  { key: 'wifi.serviceMotorbike', icon: 'moped' },
-  { key: 'wifi.serviceLaundry', icon: 'dry_cleaning' },
-  { key: 'wifi.serviceTourBooking', icon: 'confirmation_number' },
-];
-
 const IMAGES = [
-  { labelKey: 'wifi.lobby', altKey: 'wifi.lobbyAlt', src: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1782898003/6A8A1459_e7nm7o.png' },
-  { labelKey: 'wifi.concierge', altKey: 'wifi.conciergeAlt', src: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1782898184/6A8A1256_udxnxm.png' },
-  { labelKey: 'wifi.connectivity', altKey: 'wifi.connectivityAlt', src: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1782898270/6A8A1287_bzjafl.png' },
+  { labelKey: 'wifi.lobby', altKey: 'wifi.lobbyAlt', src: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1790098659/1784015817296_885263377326364022_g7328569027530867083_fbcff319b17e329729fd3250b4ce9fc2_wedcax.jpg' },
+  { labelKey: 'wifi.concierge', altKey: 'wifi.conciergeAlt', src: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1790098664/1784015817206_885263377326364022_g7328569027530867083_d1a2d8a2a3b5ef29505cef40d22693f2_qsk5qv.jpg' },
+  { labelKey: 'wifi.connectivity', altKey: 'wifi.connectivityAlt', src: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1790098678/1784015817228_885263377326364022_g7328569027530867083_1d3fe220d1eb437c93bdd91f2e76487e_qtvedn.jpg' },
 ];
 
 function Icon({ children, className = '' }) {
@@ -101,20 +92,6 @@ function WifiReception({ lang = 'en' }) {
               </a>
             </div>
           </article>
-        </section>
-
-        <section>
-          <h2 className="mb-5 font-serif text-[28px] font-semibold text-[#153b39]">{t('wifi.teamAssist', lang)}</h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICES.map((service) => (
-              <article key={service.key} className="group rounded-[24px] border border-[#d8c6aa]/55 bg-[#fff8f4] p-5 shadow-[0_10px_28px_rgba(30,53,49,0.06)] transition-colors hover:border-[#9a442d]">
-                <div className="mb-4 grid h-11 w-11 place-items-center rounded-2xl bg-[#f0e7df] text-[#615e57] transition-colors group-hover:bg-[#f5efe6]">
-                  <Icon>{service.icon}</Icon>
-                </div>
-                <h3 className="font-bold text-[#153b39]">{t(service.key, lang)}</h3>
-              </article>
-            ))}
-          </div>
         </section>
 
         <section className="grid grid-cols-1 gap-5 md:grid-cols-3">
