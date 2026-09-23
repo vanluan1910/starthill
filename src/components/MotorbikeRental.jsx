@@ -7,7 +7,7 @@ import SectionTitle from './ui/SectionTitle';
 const HERO_IMAGE = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1785294396/1784015817228_885263377326364022_g7328569027530867083_1d3fe220d1eb437c93bdd91f2e76487e_cjdvyw.jpg';
 
 const SERVICE_IMAGES = {
-  motorbike: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=800&q=80',
+  motorbike: '/images/honda-vision.jpg',
   laundry: 'https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?auto=format&fit=crop&w=800&q=80',
   pool: 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1785128552/1784015817184_885263377326364022_g7328569027530867083_0d29ffc8f523b49dfbe0d4d55c286ec6_kidd9t.jpg',
   airport: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=800&q=80',
@@ -77,7 +77,7 @@ function MotorbikeRental({ lang = 'en' }) {
             price={t('services.motoPrice', lang)}
             title={t('services.motoTitle', lang)}
           >
-            <DetailLine icon="check_circle">Honda Air Blade, Vision</DetailLine>
+            <DetailLine icon="check_circle">Honda Vision</DetailLine>
             <DetailLine icon="info">{t('services.motoReserve', lang)}</DetailLine>
           </ServiceCard>
 

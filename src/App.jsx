@@ -61,16 +61,12 @@ function getHashSlide() {
 
 function getInitialSlide() {
   try {
+    // Clear legacy saved slide so QR scan and fresh loads always start at Home
+    localStorage.removeItem(SLIDE_KEY);
+    sessionStorage.removeItem(SLIDE_KEY);
+
     const fromHash = getHashSlide();
     if (fromHash !== undefined) return fromHash;
-
-    const saved = localStorage.getItem(SLIDE_KEY) || sessionStorage.getItem(SLIDE_KEY);
-    if (saved !== null) {
-      const parsed = parseInt(saved, 10);
-      if (!isNaN(parsed) && parsed >= 0 && parsed < TOTAL_SLIDES) {
-        return parsed;
-      }
-    }
   } catch {
     /* ignore */
   }
@@ -99,8 +95,6 @@ function App() {
     const target = Math.max(0, Math.min(TOTAL_SLIDES - 1, index));
     setSlide(target);
     try {
-      localStorage.setItem(SLIDE_KEY, target.toString());
-      sessionStorage.setItem(SLIDE_KEY, target.toString());
       const hashName = SLIDE_TO_HASH[target];
       if (hashName) {
         window.history.replaceState(null, '', `#${hashName}`);
