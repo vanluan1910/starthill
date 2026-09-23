@@ -66,7 +66,7 @@ const data = {
   'wifi.serviceAirport': { en: 'Airport transfer', vi: 'Đưa đón sân bay', zh: '机场接送', ko: '공항 송영', ru: 'Трансфер из/в аэропорт' },
   'wifi.serviceRequests': { en: 'Any other requests during your stay', vi: 'Các yêu cầu khác trong kỳ nghỉ', zh: '住宿期间的其他需求', ko: '투숙 중 기타 요청사항', ru: 'Любые другие просьбы во время пребывания' },
   'wifi.serviceMotorbike': { en: 'Motorbike rental', vi: 'Thuê xe máy', zh: '摩托车租赁', ko: '오토바이 렌탈', ru: 'Аренда мотоциклов' },
-  'wifi.lobby': { en: 'Lobby', vi: 'Sảnh', zh: '大堂', ko: '로비', ru: 'Лобби' },
+  'wifi.lobby': { en: 'Pool', vi: 'Hồ bơi', zh: '泳池', ko: '수영장', ru: 'Бассейн' },
   'wifi.concierge': { en: 'Concierge', vi: 'Lễ tân', zh: '礼宾部', ko: '컨시어지', ru: 'Консьерж' },
   'wifi.connectivity': { en: 'Connectivity', vi: 'Kết nối', zh: '网络连接', ko: '연결성', ru: 'Подключение' },
   'wifi.heroAlt': { en: 'A luxury resort infinity pool and coastal lounge at sunrise.', vi: 'Hồ bơi vô cực và khu lounge ven biển của khu nghỉ dưỡng vào lúc bình minh.', zh: '日出时分的豪华度假村无边泳池与海岸休闲区。', ko: '일출 무렵의 고급 리조트 인피니티 풀과 해안 라운지.', ru: 'Бесконечный бассейн и прибрежная лаунж-зона роскошного курорта на рассвете.' },
