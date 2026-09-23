@@ -40,7 +40,7 @@ const TRAVEL_TIMES = [
 const GARDEN_IMG = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1790149218/1790146271321_4291272924811175602_4291272924811175602_d1be15288c0addccb83be319220108c8_ud06w6.jpg';
 const COAST_IMG = 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80';
 const SUNSET_IMG = 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1600&q=80';
-const SERVICE_IMG = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1782898522/6A8A1248_rnsems.png';
+const SERVICE_IMG = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1790149301/1790146271299_4291272924811175602_4291272924811175602_e460424d5486d542a03fc10cd1c1ae46_z0gues.jpg';
 
 function FAQItem({ item, lang }) {
   const [open, setOpen] = useState(false);
