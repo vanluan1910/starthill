@@ -1,7 +1,7 @@
 import { t } from '../i18n';
 import SafeImage from './ui/SafeImage';
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1600&q=80';
+const HERO_IMAGE = 'https://res.cloudinary.com/dwb9x5s1j/image/upload/v1790148931/1790146271280_4291272924811175602_4291272924811175602_ac11a8b7798a953782f6b26e472a0d2b_rec5gs.jpg';
 const BREAKFAST_IMAGE = 'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=900&q=80';
 
 const LATE_CHECKOUT_RULES = [
