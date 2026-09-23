@@ -67,11 +67,11 @@ const data = {
   'wifi.serviceRequests': { en: 'Any other requests during your stay', vi: 'Các yêu cầu khác trong kỳ nghỉ', zh: '住宿期间的其他需求', ko: '투숙 중 기타 요청사항', ru: 'Любые другие просьбы во время пребывания' },
   'wifi.serviceMotorbike': { en: 'Motorbike rental', vi: 'Thuê xe máy', zh: '摩托车租赁', ko: '오토바이 렌탈', ru: 'Аренда мотоциклов' },
   'wifi.lobby': { en: 'Pool', vi: 'Hồ bơi', zh: '泳池', ko: '수영장', ru: 'Бассейн' },
-  'wifi.concierge': { en: 'Concierge', vi: 'Lễ tân', zh: '礼宾部', ko: '컨시어지', ru: 'Консьерж' },
+  'wifi.concierge': { en: 'Bungalow', vi: 'Bungalow', zh: '木屋别墅', ko: '방갈로', ru: 'Бунгало' },
   'wifi.connectivity': { en: 'Connectivity', vi: 'Kết nối', zh: '网络连接', ko: '연결성', ru: 'Подключение' },
   'wifi.heroAlt': { en: 'A luxury resort infinity pool and coastal lounge at sunrise.', vi: 'Hồ bơi vô cực và khu lounge ven biển của khu nghỉ dưỡng vào lúc bình minh.', zh: '日出时分的豪华度假村无边泳池与海岸休闲区。', ko: '일출 무렵의 고급 리조트 인피니티 풀과 해안 라운지.', ru: 'Бесконечный бассейн и прибрежная лаунж-зона роскошного курорта на рассвете.' },
   'wifi.lobbyAlt': { en: 'Star Hill Resort lobby interior with warm coastal light.', vi: 'Sảnh Star Hill Resort với ánh sáng ven biển ấm áp.', zh: 'Star Hill Resort 大堂内部，带有温暖的海岸光线。', ko: '따뜻한 해안빛이 감도는 Star Hill Resort 로비 내부.', ru: 'Интерьер лобби Star Hill Resort с теплым прибрежным светом.' },
-  'wifi.conciergeAlt': { en: 'A concierge desk prepared for guest assistance.', vi: 'Quầy lễ tân sẵn sàng hỗ trợ khách.', zh: '为宾客提供帮助的礼宾台。', ko: '투숙객 지원을 위해 준비된 컨시어지 데스크.', ru: 'Стойка консьержа, готовая помочь гостям.' },
+  'wifi.conciergeAlt': { en: 'Star Hill Resort bungalow exterior with warm evening lights.', vi: 'Bungalow Star Hill Resort với ánh đèn ấm cúng vào buổi tối.', zh: 'Star Hill Resort 木屋别墅外观，带有温馨的晚间灯光。', ko: '따뜻한 저녁 조명이 켜진 Star Hill Resort 방갈로 외관.', ru: 'Внешний вид бунгало Star Hill Resort с теплым вечерним освещением.' },
   'wifi.connectivityAlt': { en: 'Connectivity and guest services area inside the resort.', vi: 'Khu vực kết nối và dịch vụ khách trong khu nghỉ dưỡng.', zh: '度假村内的网络连接与宾客服务区域。', ko: '리조트 내부의 연결 및 고객 서비스 공간.', ru: 'Зона подключения и гостевых услуг на территории курорта.' },
 
   /* === HOUSE RULES === */
