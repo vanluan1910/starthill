@@ -100,8 +100,20 @@ const data = {
   'rules.quietText': { en: 'Keep noise to a minimum after 10:00 PM.', vi: 'Giữ yên tĩnh sau 10:00 tối.', zh: '晚上10点后请保持安静。', ko: '오후 10시 이후에는 소음을 최소화해 주세요.', ru: 'Соблюдайте тишину после 22:00.' },
   'rules.quietTextDesktop': { en: "Keep noise to a minimum after 10:00 PM to respect your neighbors' rest.", vi: 'Giữ yên tĩnh sau 10:00 tối để tôn trọng giấc ngủ của hàng xóm.', zh: '晚上10点后请保持安静，尊重其他客人的休息。', ko: '이웃의 휴식을 위해 오후 10시 이후에는 소음을 최소화해 주세요.', ru: 'Соблюдайте тишину после 22:00, чтобы не беспокоить отдых других гостей.' },
   'rules.visitorTitle': { en: 'Visitor Registration', vi: 'Đăng ký khách tham quan', zh: '访客登记', ko: '방문객 등록', ru: 'Регистрация посетителей' },
-  'rules.visitorText': { en: 'Visitors must register at Reception.', vi: 'Khách tham quan phải đăng ký tại Lễ tân.', zh: '访客必须在前台登记。', ko: '방문객은 리셉션에 등록해야 합니다.', ru: 'Посетители должны зарегистрироваться на стойке регистрации.' },
-  'rules.visitorTextDesktop': { en: 'All visitors must register at Reception prior to entering guest floors.', vi: 'Tất cả khách tham quan phải đăng ký tại Lễ tân trước khi vào khu vực phòng khách.', zh: '所有访客在进入客房楼层前必须在前台登记。', ko: '모든 방문객은 객실 층에 들어가기 전에 리셉션에 등록해야 합니다.', ru: 'Все посетители должны зарегистрироваться на стойке регистрации перед входом на гостевые этажи.' },
+  'rules.visitorText': {
+    en: 'All visitors must register at Reception. Visiting hours are from 9:00 AM to 10:00 PM.',
+    vi: 'Tất cả khách tham quan phải đăng ký tại Lễ tân. Người thân chỉ có thể được đăng ký từ 09:00 - 22:00.',
+    zh: '所有访客必须在前台登记。亲友探访登记时间为 09:00 至 22:00。',
+    ko: '모든 방문객은 리셉션에 등록해야 합니다. 친지 등록은 09:00 ~ 22:00에 가능합니다.',
+    ru: 'Все посетители должны зарегистрироваться на стойке регистрации. Регистрация родственников/посетителей с 09:00 до 22:00.'
+  },
+  'rules.visitorTextDesktop': {
+    en: 'All visitors must register at Reception prior to entering guest floors. Visiting hours for relatives/visitors are from 9:00 AM to 10:00 PM.',
+    vi: 'Tất cả khách tham quan phải đăng ký tại quầy Lễ tân trước khi vào các tầng dành cho khách. Người thân chỉ có thể được đăng ký từ 09:00 - 22:00.',
+    zh: '所有访客进入客房楼层前必须在前台登记。亲友探访登记时间为 09:00 至 22:00。',
+    ko: '모든 방문객은 객실 층에 들어가기 전에 리셉션에 등록해야 합니다. 친지 및 방문객 등록은 09:00 ~ 22:00에 가능합니다.',
+    ru: 'Все посетители должны зарегистрироваться на стойке регистрации перед входом на жилые этажи. Регистрация родственников/посетителей с 09:00 до 22:00.'
+  },
   'rules.poolTitle': { en: 'Pool Safety', vi: 'An toàn hồ bơi', zh: '泳池安全', ko: '수영장 안전', ru: 'Безопасность бассейна' },
   'rules.poolText': { en: 'Children under 12 must be accompanied by an adult at the swimming pool.', vi: 'Trẻ em dưới 12 tuổi phải có người lớn đi kèm tại hồ bơi.', zh: '12岁以下儿童须由成人陪同到游泳池。', ko: '12세 미만 어린이는 성인 동반 시 수영장을 이용할 수 있습니다.', ru: 'Дети до 12 лет должны находиться в бассейне в сопровождении взрослого.' },
   'rules.valuablesTitle': { en: 'Valuable Security', vi: 'Bảo quản tài sản', zh: '贵重物品保管', ko: '귀중품 보관', ru: 'Хранение ценностей' },
