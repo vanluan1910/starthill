@@ -1,7 +1,7 @@
 import { t } from '../i18n';
 import SafeImage from './ui/SafeImage';
 
-const HAM_NINH_IMG = 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80';
+const HAM_NINH_IMG = 'https://tse3.mm.bing.net/th/id/OIP.7GvKcG76mGC3CRSmK5EVLgHaEI?r=0&pid=Api&h=220&P=0';
 const NIGHT_MARKET_IMG = 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80';
 
 const WATERFRONT_IMG = 'https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80';
