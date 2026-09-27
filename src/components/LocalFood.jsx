@@ -2,7 +2,7 @@ import { t } from '../i18n';
 import SafeImage from './ui/SafeImage';
 
 const HAM_NINH_IMG = 'https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/7/20/1218863/Lang-Chai-Ham-Ninh.jpg';
-const NIGHT_MARKET_IMG = 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1600&q=80';
+const NIGHT_MARKET_IMG = 'https://vnpay.vn/s1/statics.vnpay.vn/2024/5/0zd786p51n2q1715508614405.jpg';
 
 const WATERFRONT_IMG = 'https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80';
 const NINH_KITCHEN_IMG = 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';
