@@ -188,7 +188,7 @@ function Attractions({ lang = 'en' }) {
                 <SafeImage
                   alt={t('attr.churchName', lang)}
                   className="h-full w-full object-cover"
-                  src="https://images.unsplash.com/photo-1548625361-180a373b53c7?auto=format&fit=crop&w=800&q=80"
+                  src="https://i.ytimg.com/vi/AC9toodzkVY/maxresdefault.jpg"
                 />
                 <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">
                   <Icon className="text-sm text-[#e8c39e]">church</Icon>
