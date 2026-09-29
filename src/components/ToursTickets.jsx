@@ -12,25 +12,25 @@ const FEATURED_TOURS = [
     nameKey: 'tours.cableCar',
     descKey: 'tours.cableCarDesc',
     icon: 'tram',
-    img: 'https://images.unsplash.com/photo-1508672019048-805479767384?auto=format&fit=crop&w=800&q=80',
+    img: 'https://visitourvietnam.com/wp-content/uploads/2024/01/Hon-Thom-Cable-Car.jpg',
   },
   {
     nameKey: 'tours.vinwonders',
     descKey: 'tours.vinwondersDesc',
     icon: 'sports_esports',
-    img: 'https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=800&q=80',
+    img: 'https://app-api.glodival.vn/storage/4/images/u07fZg6zSRuCpsB4exIekVZinrk1JqJAIak4tWj5.png',
   },
   {
     nameKey: 'tours.safari',
     descKey: 'tours.safariDesc',
     icon: 'pets',
-    img: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=800&q=80',
+    img: 'https://cassiacottage.com/wp-content/uploads/2025/10/Vinpearl-Phu-Quoc-Cassia-Cottage-Resort-and-Spa-4.jpg',
   },
   {
     nameKey: 'tours.kissShow',
     descKey: 'tours.kissShowDesc',
     icon: 'theater_comedy',
-    img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
+    img: 'https://eholiday.vn/wp-content/uploads/2023/02/show-kiss-the-stars-phu-quoc.jpg',
   },
 ];
 

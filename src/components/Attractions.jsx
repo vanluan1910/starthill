@@ -4,7 +4,7 @@ import Icon from './ui/Icon';
 import SafeImage from './ui/SafeImage';
 import { LinedSectionTitle } from './ui/SectionTitle';
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80';
+const HERO_IMAGE = 'https://static.vinwonders.com/production/kinh-nghiem-du-lich-phu-quoc-banner.jpg';
 
 const ENTERTAINMENT = [
   {
@@ -12,28 +12,28 @@ const ENTERTAINMENT = [
     descKey: 'attr.vinwondersDesc',
     timeKey: 'attr.time3540',
     maps: 'https://maps.app.goo.gl/TEUqujT55kNfuPBU7',
-    img: 'https://images.unsplash.com/photo-1513889961551-628c1e5e2ee9?auto=format&fit=crop&w=800&q=80',
+    img: 'https://app-api.glodival.vn/storage/4/images/u07fZg6zSRuCpsB4exIekVZinrk1JqJAIak4tWj5.png',
   },
   {
     nameKey: 'attr.safari',
     descKey: 'attr.safariDesc',
     timeKey: 'attr.time3540',
     maps: 'https://maps.app.goo.gl/yWXRLLzgDY3ZWrS5A',
-    img: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=800&q=80',
+    img: 'https://cassiacottage.com/wp-content/uploads/2025/10/Vinpearl-Phu-Quoc-Cassia-Cottage-Resort-and-Spa-4.jpg',
   },
   {
     nameKey: 'attr.kissBridge',
     descKey: 'attr.kissBridgeDesc',
     timeKey: 'attr.time2025',
     maps: 'https://maps.app.goo.gl/va5sNfcey29BddTS8',
-    img: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80',
+    img: 'https://eholiday.vn/wp-content/uploads/2023/02/show-kiss-the-stars-phu-quoc.jpg',
   },
   {
     nameKey: 'attr.sunsetTown',
     descKey: 'attr.sunsetTownDesc',
     timeKey: 'attr.time2025',
     maps: 'https://maps.app.goo.gl/nmC99ZSPtADYbHzr8',
-    img: 'https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80',
+    img: 'https://vpq.vn/bai-viet/Sunset-Town.jpg',
   },
 ];
 
@@ -44,19 +44,19 @@ const SIGHTSEEING = [
     distKey: 'attr.dinhCauDist',
     hoursKey: 'attr.dinhCauHours',
     maps: 'https://maps.app.goo.gl/UiPCYQ4PgMp7HFsn7',
-    img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
+    img: 'https://i.ytimg.com/vi/trMCsF2XI7E/maxresdefault.jpg',
   },
   {
     nameKey: 'attr.pagoda',
     descKey: 'attr.pagodaDesc',
     maps: 'https://maps.app.goo.gl/2MMgpsxQA92s4RQAA',
-    img: 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=800&q=80',
+    img: 'https://static.wixstatic.com/media/9d8ed5_9686a257279d4a72aeaf9cefe7d9bc2b~mv2.jpg/v1/fill/w_900,h_548,al_c,q_85,enc_avif,quality_auto/9d8ed5_9686a257279d4a72aeaf9cefe7d9bc2b~mv2.jpg',
   },
   {
     nameKey: 'attr.prison',
     descKey: 'attr.prisonDesc',
     maps: 'https://maps.app.goo.gl/D4r9LKhuYXdgEzzEA',
-    img: 'https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80',
+    img: 'https://visitphuquoc.com.vn/VisitPhuQuoc/_default_upload_bucket/1824/image-thumb__1824__720_jpg/5.2c230584.77634fc8.jpg',
   },
 ];
 
@@ -65,19 +65,19 @@ const CRAFTS = [
     nameKey: 'attr.pepperFarm',
     descKey: 'attr.pepperFarmDesc',
     maps: 'https://maps.app.goo.gl/DneokAsKm5STDES66',
-    img: 'https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80',
+    img: 'https://kiengiangtravel.vn/wp-content/uploads/2017/10/vuon-tieu-phu-quoc-1024x768.jpg',
   },
   {
     nameKey: 'attr.pearlFarm',
     descKey: 'attr.pearlFarmDesc',
     maps: 'https://maps.app.goo.gl/ULXWtshbNX8SsuG19',
-    img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
+    img: 'https://file.hstatic.net/200000289353/article/imag0739_f1bbcddfdd994cd79dd12b78ecf1a5d2_1024x1024.jpg',
   },
   {
     nameKey: 'attr.fishSauce',
     descKey: 'attr.fishSauceDesc',
     maps: 'https://maps.app.goo.gl/ZbYkdG31qpEm1n4x5',
-    img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80',
+    img: 'https://viettourist.com/resources/images/Blog-BienDao/mamthung-3.jpg',
   },
 ];
 
