@@ -157,23 +157,9 @@ function SightseeingCard({ item, lang }) {
   }
 
   return (
-    <article className="group flex flex-row overflow-hidden rounded-[20px] md:rounded-[24px] bg-[#fbf9f5] shadow-[0_10px_28px_rgba(50,34,20,0.06)] md:shadow-[0_14px_34px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(50,34,20,0.14)] border border-[#e8dfd5] items-stretch">
-      {/* Mobile: Ảnh bên trái (w-1/3 - giống bố cục hotel-rules) */}
-      <a
-        href={item.maps}
-        target="_blank"
-        rel="noreferrer"
-        className="md:hidden relative w-1/3 min-h-[120px] shrink-0 overflow-hidden block"
-      >
-        <SafeImage
-          alt={t(item.nameKey, lang)}
-          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-          src={item.img}
-        />
-      </a>
-
-      {/* Content: Mobile bên phải (w-2/3), Desktop bên trái (flex-1 md:order-1) */}
-      <div className="flex flex-1 flex-col justify-between p-3.5 md:p-6 md:order-1">
+    <article className="group flex flex-row items-stretch justify-between overflow-hidden rounded-[20px] md:rounded-[24px] bg-[#fbf9f5] shadow-[0_10px_28px_rgba(50,34,20,0.06)] md:shadow-[0_14px_34px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(50,34,20,0.14)] border border-[#e8dfd5]">
+      {/* Content: Bên trái (cả mobile & desktop) */}
+      <div className="flex flex-1 flex-col justify-between p-3.5 md:p-6">
         <div>
           {(item.hoursKey || item.distKey) && (
             <div className="mb-1.5 md:mb-2.5 flex flex-wrap items-center gap-1.5 md:gap-2">
@@ -208,14 +194,19 @@ function SightseeingCard({ item, lang }) {
         </div>
       </div>
 
-      {/* Desktop: Ảnh bên phải (md:w-5/12 lg:w-4/12) */}
-      <div className="hidden md:block relative md:w-5/12 lg:w-4/12 shrink-0 overflow-hidden md:order-2 min-h-[200px]">
+      {/* Ảnh: Bên phải (cả mobile & desktop) */}
+      <a
+        href={item.maps}
+        target="_blank"
+        rel="noreferrer"
+        className="relative w-1/3 md:w-5/12 lg:w-4/12 min-h-[120px] md:min-h-[200px] shrink-0 overflow-hidden block"
+      >
         <SafeImage
           alt={t(item.nameKey, lang)}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           src={item.img}
         />
-      </div>
+      </a>
     </article>
   );
 }
@@ -379,10 +370,7 @@ function Attractions({ lang = 'en' }) {
             <p className="max-w-2xl text-sm leading-[1.75] text-[#4e453e]">{t('attr.traditionalCraftsDesc', lang)}</p>
           </div>
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            <article className="flex flex-col items-center gap-6 rounded-[28px] bg-[#efeeea] p-6 md:flex-row">
-              <div className="aspect-square w-full overflow-hidden rounded-[24px] shadow-md md:w-1/2">
-                <SafeImage alt={t(pepperFarm.nameKey, lang)} className="h-full w-full object-cover" src={pepperFarm.img} />
-              </div>
+            <article className="flex flex-col-reverse items-center gap-6 rounded-[28px] bg-[#efeeea] p-6 md:flex-row">
               <div className="w-full md:w-1/2">
                 <span className="mb-3 inline-block rounded-full bg-[#ffdbce] px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#622a11]">
                   {t('attr.mustVisit', lang)}
@@ -393,6 +381,9 @@ function Attractions({ lang = 'en' }) {
                   <Icon>location_on</Icon>
                   {t('attr.viewMaps', lang)}
                 </a>
+              </div>
+              <div className="aspect-square w-full overflow-hidden rounded-[24px] shadow-md md:w-1/2">
+                <SafeImage alt={t(pepperFarm.nameKey, lang)} className="h-full w-full object-cover" src={pepperFarm.img} />
               </div>
             </article>
 
