@@ -45,6 +45,7 @@ const SIGHTSEEING = [
     hoursKey: 'attr.dinhCauHours',
     maps: 'https://maps.app.goo.gl/UiPCYQ4PgMp7HFsn7',
     img: 'https://i.ytimg.com/vi/trMCsF2XI7E/maxresdefault.jpg',
+    featured: true,
   },
   {
     nameKey: 'attr.pagoda',
@@ -104,46 +105,111 @@ function EntertainmentCard({ item, lang }) {
 }
 
 function SightseeingCard({ item, lang }) {
+  if (item.featured) {
+    return (
+      <article className="group flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#fbf9f5] shadow-[0_14px_34px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(50,34,20,0.14)] border border-[#e8dfd5] md:flex-row md:items-stretch">
+        {/* Desktop: Content bên trái / Mobile: Content bên dưới */}
+        <div className="flex flex-1 flex-col justify-between p-5 md:p-6 order-2 md:order-1">
+          <div>
+            {(item.hoursKey || item.distKey) && (
+              <div className="mb-2.5 flex flex-wrap items-center gap-2">
+                {item.hoursKey && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#f3ede4] px-2.5 py-1 text-xs font-semibold text-[#622a11]">
+                    <Icon className="text-sm text-[#622a11]">schedule</Icon>
+                    {t(item.hoursKey, lang)}
+                  </span>
+                )}
+                {item.distKey && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#ffdbce]/70 px-2.5 py-1 text-xs font-semibold text-[#622a11]">
+                    <Icon className="text-sm text-[#622a11]">moped</Icon>
+                    {t(item.distKey, lang)}
+                  </span>
+                )}
+              </div>
+            )}
+            <h3 className="font-serif text-xl font-bold text-[#322214] md:text-2xl">{t(item.nameKey, lang)}</h3>
+            <p className="mt-2 text-sm leading-[1.75] text-[#4e453e]">{t(item.descKey, lang)}</p>
+          </div>
+          <div className="mt-4">
+            <a
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#322214] px-4 py-2 text-xs font-bold text-white no-underline transition-all hover:bg-[#622a11] hover:gap-2.5"
+              href={item.maps}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Icon className="text-sm">explore</Icon>
+              {t('attr.viewMaps', lang)}
+              <Icon className="text-sm">arrow_forward</Icon>
+            </a>
+          </div>
+        </div>
+
+        {/* Desktop: Ảnh bên phải / Mobile: Ảnh full-width phía trên */}
+        <div className="relative aspect-[16/9] md:aspect-auto md:w-5/12 lg:w-4/12 overflow-hidden shrink-0 min-h-[200px] order-1 md:order-2">
+          <SafeImage
+            alt={t(item.nameKey, lang)}
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            src={item.img}
+          />
+        </div>
+      </article>
+    );
+  }
+
   return (
-    <article className="group flex flex-col justify-between overflow-hidden rounded-[24px] bg-[#fbf9f5] shadow-[0_14px_34px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(50,34,20,0.14)] border border-[#e8dfd5] md:flex-row md:items-stretch">
-      {/* Content bên trái */}
-      <div className="flex flex-1 flex-col justify-between p-5 md:p-6">
+    <article className="group flex flex-row overflow-hidden rounded-[20px] md:rounded-[24px] bg-[#fbf9f5] shadow-[0_10px_28px_rgba(50,34,20,0.06)] md:shadow-[0_14px_34px_rgba(50,34,20,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(50,34,20,0.14)] border border-[#e8dfd5] items-stretch">
+      {/* Mobile: Ảnh bên trái (w-1/3 - giống bố cục hotel-rules) */}
+      <a
+        href={item.maps}
+        target="_blank"
+        rel="noreferrer"
+        className="md:hidden relative w-1/3 min-h-[120px] shrink-0 overflow-hidden block"
+      >
+        <SafeImage
+          alt={t(item.nameKey, lang)}
+          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+          src={item.img}
+        />
+      </a>
+
+      {/* Content: Mobile bên phải (w-2/3), Desktop bên trái (flex-1 md:order-1) */}
+      <div className="flex flex-1 flex-col justify-between p-3.5 md:p-6 md:order-1">
         <div>
           {(item.hoursKey || item.distKey) && (
-            <div className="mb-2.5 flex flex-wrap items-center gap-2">
+            <div className="mb-1.5 md:mb-2.5 flex flex-wrap items-center gap-1.5 md:gap-2">
               {item.hoursKey && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#f3ede4] px-2.5 py-1 text-xs font-semibold text-[#622a11]">
-                  <Icon className="text-sm text-[#622a11]">schedule</Icon>
+                <span className="inline-flex items-center gap-1 rounded-full bg-[#f3ede4] px-2 py-0.5 text-[10px] md:text-xs font-semibold text-[#622a11]">
+                  <Icon className="text-xs md:text-sm text-[#622a11]">schedule</Icon>
                   {t(item.hoursKey, lang)}
                 </span>
               )}
               {item.distKey && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#ffdbce]/70 px-2.5 py-1 text-xs font-semibold text-[#622a11]">
-                  <Icon className="text-sm text-[#622a11]">moped</Icon>
+                <span className="inline-flex items-center gap-1 rounded-full bg-[#ffdbce]/70 px-2 py-0.5 text-[10px] md:text-xs font-semibold text-[#622a11]">
+                  <Icon className="text-xs md:text-sm text-[#622a11]">moped</Icon>
                   {t(item.distKey, lang)}
                 </span>
               )}
             </div>
           )}
-          <h3 className="font-serif text-xl font-bold text-[#322214] md:text-2xl">{t(item.nameKey, lang)}</h3>
-          <p className="mt-2 text-sm leading-[1.75] text-[#4e453e]">{t(item.descKey, lang)}</p>
+          <h3 className="font-serif text-base font-bold text-[#322214] md:text-2xl">{t(item.nameKey, lang)}</h3>
+          <p className="mt-1 md:mt-2 text-xs md:text-sm leading-[1.6] md:leading-[1.75] text-[#4e453e] line-clamp-3 md:line-clamp-none">{t(item.descKey, lang)}</p>
         </div>
-        <div className="mt-4">
+        <div className="mt-2.5 md:mt-4">
           <a
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#322214] px-4 py-2 text-xs font-bold text-white no-underline transition-all hover:bg-[#622a11] hover:gap-2.5"
+            className="inline-flex items-center gap-1 md:gap-1.5 rounded-full bg-[#322214] px-3 py-1 md:px-4 md:py-2 text-[11px] md:text-xs font-bold text-white no-underline transition-all hover:bg-[#622a11] hover:gap-2.5"
             href={item.maps}
             rel="noreferrer"
             target="_blank"
           >
-            <Icon className="text-sm">explore</Icon>
+            <Icon className="text-xs md:text-sm">explore</Icon>
             {t('attr.viewMaps', lang)}
-            <Icon className="text-sm">arrow_forward</Icon>
+            <Icon className="text-xs md:text-sm">arrow_forward</Icon>
           </a>
         </div>
       </div>
 
-      {/* Ảnh bên phải */}
-      <div className="relative aspect-[16/10] md:aspect-auto md:w-5/12 lg:w-4/12 overflow-hidden shrink-0 min-h-[220px]">
+      {/* Desktop: Ảnh bên phải (md:w-5/12 lg:w-4/12) */}
+      <div className="hidden md:block relative md:w-5/12 lg:w-4/12 shrink-0 overflow-hidden md:order-2 min-h-[200px]">
         <SafeImage
           alt={t(item.nameKey, lang)}
           className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -204,17 +270,30 @@ function Attractions({ lang = 'en' }) {
             ))}
 
             {/* Mass Schedule – Duong Dong Parish Church */}
-            <div className="overflow-hidden rounded-[24px] bg-[#fbf9f5] shadow-[0_14px_34px_rgba(50,34,20,0.08)] border border-[#e8dfd5]">
+            <div className="overflow-hidden rounded-[20px] md:rounded-[24px] bg-[#fbf9f5] shadow-[0_10px_28px_rgba(50,34,20,0.06)] md:shadow-[0_14px_34px_rgba(50,34,20,0.08)] border border-[#e8dfd5]">
               <div className="flex flex-col md:flex-row md:items-stretch">
-                {/* Schedule Info (Nội dung bên trái) */}
-                <div className="flex flex-1 flex-col justify-between p-5 md:p-6">
+                {/* Mobile: Church Image Banner phía trên */}
+                <div className="md:hidden relative aspect-[16/9] w-full overflow-hidden shrink-0">
+                  <SafeImage
+                    alt={t('attr.churchName', lang)}
+                    className="h-full w-full object-cover"
+                    src="https://i.ytimg.com/vi/AC9toodzkVY/maxresdefault.jpg"
+                  />
+                  <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 rounded-full bg-black/60 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">
+                    <Icon className="text-sm text-[#e8c39e]">church</Icon>
+                    <span>{t('attr.churchName', lang)}</span>
+                  </div>
+                </div>
+
+                {/* Schedule Info (Nội dung bên trái trên Desktop / bên dưới trên Mobile) */}
+                <div className="flex flex-1 flex-col justify-between p-4 md:p-6 md:order-1">
                   <div>
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-[#e8dfd5] pb-3 mb-4">
-                      <h3 className="font-serif text-lg font-bold text-[#322214]">
+                    <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between border-b border-[#e8dfd5] pb-3 mb-4">
+                      <h3 className="font-serif text-base md:text-lg font-bold text-[#322214]">
                         {t('attr.churchTitle', lang)}
                       </h3>
                       <a
-                        className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full bg-[#322214] px-4 py-1.5 text-xs font-bold text-white no-underline transition-all hover:bg-[#622a11]"
+                        className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full bg-[#322214] px-3.5 py-1.5 text-xs font-bold text-white no-underline transition-all hover:bg-[#622a11]"
                         href="https://maps.app.goo.gl/ctf1g9iH5J3baDzK7"
                         rel="noreferrer"
                         target="_blank"
@@ -224,10 +303,10 @@ function Attractions({ lang = 'en' }) {
                       </a>
                     </div>
 
-                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                      <div className="rounded-[18px] bg-white/80 p-4 border border-[#eee6dc]">
-                        <div className="mb-2 flex items-center gap-2 text-sm font-bold text-[#322214]">
-                          <Icon className="text-base text-[#622a11]">calendar_today</Icon>
+                    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <div className="rounded-[16px] md:rounded-[18px] bg-white/80 p-3.5 md:p-4 border border-[#eee6dc]">
+                        <div className="mb-2 flex items-center gap-2 text-xs md:text-sm font-bold text-[#322214]">
+                          <Icon className="text-sm md:text-base text-[#622a11]">calendar_today</Icon>
                           {t('attr.monSat', lang)}
                         </div>
                         <ul className="space-y-1.5 text-xs text-[#4e453e]">
@@ -242,9 +321,9 @@ function Attractions({ lang = 'en' }) {
                         </ul>
                       </div>
 
-                      <div className="rounded-[18px] bg-white/80 p-4 border border-[#eee6dc]">
-                        <div className="mb-2 flex items-center gap-2 text-sm font-bold text-[#322214]">
-                          <Icon className="text-base text-[#622a11]">event</Icon>
+                      <div className="rounded-[16px] md:rounded-[18px] bg-white/80 p-3.5 md:p-4 border border-[#eee6dc]">
+                        <div className="mb-2 flex items-center gap-2 text-xs md:text-sm font-bold text-[#322214]">
+                          <Icon className="text-sm md:text-base text-[#622a11]">event</Icon>
                           {t('attr.sunday', lang)}
                         </div>
                         <div className="grid grid-cols-2 gap-2 text-xs text-[#4e453e]">
@@ -269,13 +348,13 @@ function Attractions({ lang = 'en' }) {
                     </div>
                   </div>
 
-                  <p className="mt-4 text-center font-serif text-xs italic text-[#622a11]/90">
+                  <p className="mt-3 md:mt-4 text-center font-serif text-xs italic text-[#622a11]/90">
                     "{t('attr.churchBlessing', lang)}"
                   </p>
                 </div>
 
-                {/* Church Image Banner (Ảnh bên phải) */}
-                <div className="relative aspect-[16/9] md:aspect-auto md:w-5/12 lg:w-4/12 overflow-hidden shrink-0 min-h-[220px]">
+                {/* Desktop: Church Image Banner bên phải */}
+                <div className="hidden md:block relative md:w-5/12 lg:w-4/12 overflow-hidden shrink-0 md:order-2 min-h-[220px]">
                   <SafeImage
                     alt={t('attr.churchName', lang)}
                     className="h-full w-full object-cover"
