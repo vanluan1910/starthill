@@ -222,17 +222,20 @@ function SightseeingCard({ item, lang }) {
 
 function CompactCraftCard({ item, lang }) {
   return (
-    <article className="group flex gap-4 rounded-[20px] border border-[#d2c4bb] p-4 transition-all hover:border-[#322214]">
-      <div className="h-24 w-24 shrink-0 overflow-hidden rounded-[16px]">
-        <SafeImage alt={t(item.nameKey, lang)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src={item.img} />
-      </div>
-      <div className="flex flex-col justify-center">
-        <h4 className="font-bold text-[#322214]">{t(item.nameKey, lang)}</h4>
+    <article className="group flex items-center justify-between gap-4 rounded-[20px] border border-[#d2c4bb] bg-[#fbf9f5] p-4 transition-all hover:border-[#322214] hover:shadow-[0_10px_24px_rgba(50,34,20,0.06)]">
+      {/* Nội dung bên trái */}
+      <div className="flex flex-1 flex-col justify-center">
+        <h4 className="font-serif text-base font-bold text-[#322214]">{t(item.nameKey, lang)}</h4>
         <p className="mt-1 text-xs leading-[1.6] text-[#4e453e]">{t(item.descKey, lang)}</p>
         <a className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-[#322214] no-underline transition-all group-hover:gap-2" href={item.maps} rel="noreferrer" target="_blank">
           {t('attr.viewDetails', lang)}
           <Icon className="text-[14px]">arrow_forward</Icon>
         </a>
+      </div>
+
+      {/* Ảnh bên phải */}
+      <div className="h-24 w-24 shrink-0 overflow-hidden rounded-[16px]">
+        <SafeImage alt={t(item.nameKey, lang)} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src={item.img} />
       </div>
     </article>
   );
