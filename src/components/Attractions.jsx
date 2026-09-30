@@ -65,7 +65,7 @@ const CRAFTS = [
     nameKey: 'attr.pepperFarm',
     descKey: 'attr.pepperFarmDesc',
     maps: 'https://maps.app.goo.gl/DneokAsKm5STDES66',
-    img: 'https://kiengiangtravel.vn/wp-content/uploads/2017/10/vuon-tieu-phu-quoc-1024x768.jpg',
+    img: 'https://hatienvegas.com/wp-content/uploads/2025/02/Tim-hieu-ve-Vuon-tieu-Kampot-Du-lich-Kampot-Hatienvegas-1-1200x800.jpg',
   },
   {
     nameKey: 'attr.pearlFarm',
