@@ -74,6 +74,35 @@ const data = {
   'wifi.conciergeAlt': { en: 'Star Hill Resort ambience with warm evening lights.', vi: 'Không gian Star Hill Resort với ánh đèn ấm cúng vào buổi tối.', zh: 'Star Hill Resort 度假氛围，带有温馨的晚间灯光。', ko: '따뜻한 저녁 조명이 켜진 Star Hill Resort 공간.', ru: 'Атмосфера Star Hill Resort с теплым вечерним освещением.' },
   'wifi.connectivityAlt': { en: 'Connectivity and guest services area inside the resort.', vi: 'Khu vực kết nối và dịch vụ khách trong khu nghỉ dưỡng.', zh: '度假村内的网络连接与宾客服务区域。', ko: '리조트 내부의 연결 및 고객 서비스 공간.', ru: 'Зона подключения и гостевых услуг на территории курорта.' },
 
+  /* === SAFE INSTRUCTIONS === */
+  'wifi.safeSectionTitle': { en: 'In-Room Safe Instructions', vi: 'Hướng dẫn sử dụng két sắt', zh: '保险箱使用指南', ko: '객실 금고 사용 안내', ru: 'Инструкция к сейфу' },
+  'wifi.safeSectionDesc': { en: 'Step-by-step instructions for operating your in-room safe securely.', vi: 'Các bước cài đặt mật mã và hướng dẫn sử dụng két sắt an toàn trong phòng.', zh: '客房电子保险箱密码设置与使用步骤。', ko: '객실 내 전자금고 비밀번호 설정 및 안전한 사용 방법입니다.', ru: 'Пошаговая инструкция по настройке и использованию сейфа в номере.' },
+
+  'wifi.safeStep1Badge': { en: 'Step 1', vi: 'Bước 1', zh: '步骤 1', ko: '1단계', ru: 'Шаг 1' },
+  'wifi.safeStep1Title': { en: 'Press Red Button Inside', vi: 'Ấn nút đỏ trong cánh cửa', zh: '按门内红色按钮', ko: '문 안쪽 빨간 버튼 누르기', ru: 'Нажмите красную кнопку внутри' },
+  'wifi.safeStep1Desc': { en: 'Please open the safe door, then press the red button located inside the door.', vi: 'Vui lòng mở cửa két sắt, ấn vào nút đỏ phía trong cánh cửa.', zh: '请打开保险箱门，按下门内侧的红色按钮。', ko: '금고 문을 열고 문 안쪽에 있는 빨간색 버튼을 눌러주세요.', ru: 'Пожалуйста, откройте сейф и нажмите на красную кнопку внутри дверцы.' },
+  'wifi.safeStep1Hint': { en: 'Red button inside door', vi: 'Nút đỏ phía trong', zh: '门内侧红色按键', ko: '문 안쪽 빨간색 버튼', ru: 'Кнопка внутри дверцы' },
+
+  'wifi.safeStep2Badge': { en: 'Step 2', vi: 'Bước 2', zh: '步骤 2', ko: '2단계', ru: 'Шаг 2' },
+  'wifi.safeStep2Title': { en: 'Enter Code & Press "B" (2x)', vi: 'Nhập mật mã & nhấn "B" (2 lần)', zh: '输入密码并按“B”（操作2次）', ko: '비밀번호 입력 & "B" 누르기 (2회)', ru: 'Введите код и «B» (2 раза)' },
+  'wifi.safeStep2Desc': { en: 'When the yellow "PROCEED" light appears outside, enter a password of at least 4 digits then press "B" (repeat 2 times).', vi: 'Sau đó bên ngoài cánh cửa hiện lên nút vàng "PROCEED", quý khách vui lòng nhập mật mã ít nhất 4 chữ số sau đó nhấn "B" (thao tác 2 lần).', zh: '门外显示黄色“PROCEED”灯后，输入至少4位数字密码并按“B”（操作2次）。', ko: '문 외부에 노란색 "PROCEED" 불이 켜지면 4자리 이상의 비밀번호를 입력한 후 "B"를 누르세요 (2회 반복).', ru: 'Когда снаружи загорится желтый индикатор «PROCEED», введите пароль минимум из 4 цифр и нажмите «B» (повторите 2 раза).' },
+  'wifi.safeStep2Example': { en: 'Example: 1234B, 1234B', vi: 'Ví dụ: 1234B, 1234B', zh: '例如：1234B，1234B', ko: '예: 1234B, 1234B', ru: 'Пример: 1234B, 1234B' },
+
+  'wifi.safeStep3Badge': { en: 'Step 3', vi: 'Bước 3', zh: '步骤 3', ko: '3단계', ru: 'Шаг 3' },
+  'wifi.safeStep3Title': { en: 'Turn Knob to 3 O\'clock to Lock', vi: 'Vặn núm về 3h để khóa cửa', zh: '顺时针转至3点方向锁门', ko: '3시 방향으로 돌려 잠금', ru: 'Поверните на 3 часа для замка' },
+  'wifi.safeStep3Desc': { en: 'The red "LOW BATTERY" and green "READY" lights will show. Turn the control knob clockwise towards 3 o\'clock, close the door, and return the knob to its original position to lock.', vi: 'Sau đó sẽ hiện lên nút đỏ "LOW BATTERY" và nút xanh "READY". Quý khách vui lòng vặn núm điều khiển về hướng 3h theo chiều kim đồng hồ, sau đó đóng cửa lại và trả núm điều khiển về vị trí ban đầu để khóa cửa.', zh: '随后将亮起红色“LOW BATTERY”和绿色“READY”灯。请顺时针将旋钮旋至3点方向，关门并将旋钮复位锁紧。', ko: '빨간색 "LOW BATTERY"와 초록색 "READY" 불이 켜집니다. 노브를 시계방향 3시로 돌리고 문을 닫은 뒤, 원래 위치로 돌려 잠급니다.', ru: 'Загорятся красный «LOW BATTERY» и зеленый «READY». Поверните ручку на 3 часа по часовой стрелке, закройте дверцу и верните ручку в исходное положение.' },
+  'wifi.safeStep3Hint': { en: 'Clockwise 3 o\'clock', vi: 'Chiều kim đồng hồ 3h', zh: '顺时针3点钟方向', ko: '시계 방향 3시', ru: 'По часовой стрелке на 3ч' },
+
+  'wifi.safeStep4Badge': { en: 'Step 4', vi: 'Bước 4', zh: '步骤 4', ko: '4단계', ru: 'Шаг 4' },
+  'wifi.safeStep4Title': { en: 'Unlock: Code + "B"', vi: 'Mở két: Mật mã + "B"', zh: '开锁：输入密码 + “B”', ko: '금고 열기: 비밀번호 + "B"', ru: 'Открытие: Код + «B»' },
+  'wifi.safeStep4Desc': { en: 'To open the safe, enter the password you have set, press "B", then rotate the control knob to open.', vi: 'Nếu quý khách muốn mở cửa két sắt, hãy nhập đúng mật mã mình đã cài đặt và chọn "B", sau đó xoay núm điều khiển.', zh: '若要打开保险箱，请输入设置的密码并按“B”，然后旋转旋钮即可开启。', ko: '금고를 열려면 설정한 비밀번호를 입력하고 "B"를 누른 후 조절 노브를 돌려주세요.', ru: 'Чтобы открыть сейф, введите ваш пароль, нажмите «B» и поверните ручку управления.' },
+  'wifi.safeStep4Hint': { en: 'Password + B -> Rotate knob', vi: 'Mật mã + B -> Xoay núm', zh: '密码 + B -> 旋转旋钮', ko: '비밀번호 + B -> 노브 회전', ru: 'Пароль + B -> Поворот' },
+
+  'wifi.safeNoteTitle': { en: 'Important Security Notice', vi: 'Lưu ý quan trọng', zh: '重要安全须知', ko: '중요 안전 안내', ru: 'Важное примечание' },
+  'wifi.safeNoteStaff': { en: 'The password is created and remembered solely by the guest. Resort staff are not allowed to ask for your safe password under any circumstances.', vi: 'Mật mã sẽ do quý khách tự nhập số bất kỳ và ghi nhớ, nhân viên Resort không được xin mật mã két sắt của quý khách dưới bất kỳ hình thức nào.', zh: '密码由宾客自行设置并妥善保管，度假村员工在任何情况下均不得索要您的保险箱密码。', ko: '비밀번호는 고객님께서 직접 설정하고 보관하셔야 하며, 리조트 직원은 어떤 경우에도 금고 비밀번호를 묻지 않습니다.', ru: 'Пароль задается и сохраняется исключительно гостем. Персонал курорта ни в коем случае не запрашивает пароль от сейфа.' },
+  'wifi.safeNoteFee': { en: 'If you do not remember the password to open the safe, the Resort provides unlock assistance for 100,000 VND / time.', vi: 'Trường hợp quý khách không nhớ mật mã để mở két, Resort sẽ hỗ trợ mở khóa 100.000 VNĐ/Lần.', zh: '若您遗忘密码无法开锁，度假村将协助开锁，服务费为 100,000 越南盾/次。', ko: '비밀번호를 분실하신 경우, 리조트에서 개방을 지원해 드리며 회당 100,000 VND의 비용이 발생합니다.', ru: 'В случае если вы забыли пароль, курорт поможет открыть сейф за 100 000 VND/раз.' },
+  'wifi.safeContactReception': { en: 'Reception Support:', vi: 'Liên hệ Lễ Tân:', zh: '联系前台：', ko: '리셉션 문의:', ru: 'Связь с ресепшн:' },
+
   /* === HOUSE RULES === */
   'rules.title': { en: 'House Rules', vi: 'Nội quy', zh: '住宿规定', ko: '숙소 규칙', ru: 'Правила проживания' },
   'rules.request': { en: 'To ensure a pleasant stay for everyone, we kindly ask you to:', vi: 'Để đảm bảo kỳ nghỉ thoải mái cho tất cả mọi người, chúng tôi kính mong quý khách:', zh: '为了确保所有客人都能享受愉快的住宿，请遵守以下规定：', ko: '모든 분들이 쾌적하게 지내실 수 있도록 다음 사항을 부탁드립니다:', ru: 'Чтобы обеспечить приятное пребывание для всех, мы любезно просим вас:' },
